@@ -475,3 +475,8 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .album figcaption a{color:var(--on-stage)}
 @media (max-width:820px){.al-deck{grid-template-columns:1fr}.al-sleeve{width:min(78%,340px)}.al-list{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.al-disc,.al-cover,.al-wash img{transition:none}.al-disc .al-label,.al-eq i{animation:none}.album.playing .al-eq i{height:var(--h,60%)}}
+/* Sangskift: pladen glider ind i omslaget, coveret skifter, og pladen glider ud igen */
+.album.swap .al-disc{transform:translateX(0)!important;transition:transform .38s cubic-bezier(.5,0,.75,0)}
+.album.swap .al-cover{transform:scale(.97)}
+.album.swap .al-disc .al-label{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.album.swap .al-disc{transition:none}}

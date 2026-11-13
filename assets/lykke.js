@@ -189,13 +189,23 @@ if (al && D.album?.length) {
   list.innerHTML = T.map((t, k) => `<li><button data-i="${k}" aria-current="false"><span class="n">${pad(k + 1)}</span><img src="${t.cover}" alt="" loading="lazy" width="44" height="44"><span class="t"><b>${t.title}</b><span>${t.artist}</span></span><span class="d"></span></button></li>`).join('');
   const rows = $$('button', list);
 
-  function show(k) {
+  let swapTimer;
+  function setArt(t) {
+    const c = $('.al-cover', al); c.src = t.cover; c.alt = `Cover til ${t.title} af ${t.artist}`;
+    $('.al-label img', al).src = t.cover;
+  }
+  function show(k, animate) {
     const t = T[k];
     $('.al-idx', al).textContent = `Nr. ${pad(k + 1)}`;
     $('.al-title', al).textContent = t.title;
     $('.al-artist', al).textContent = t.artist;
-    const c = $('.al-cover', al); c.src = t.cover; c.alt = `Cover til ${t.title} af ${t.artist}`;
-    $('.al-label img', al).src = t.cover;
+    clearTimeout(swapTimer);
+    if (animate && !RM && al.classList.contains('ready')) {
+      /* pladen glider ind i omslaget, coveret skifter, og pladen glider ud igen */
+      new Image().src = t.cover;
+      al.classList.add('swap');
+      swapTimer = setTimeout(() => { setArt(t); requestAnimationFrame(() => al.classList.remove('swap')) }, 400);
+    } else { al.classList.remove('swap'); setArt(t) }
     w = 1 - w; washes[w].src = t.cover; washes[w].classList.add('on'); washes[1 - w].classList.remove('on');
     rows.forEach((r, n) => r.setAttribute('aria-current', n === k));
     if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: t.title, artist: t.artist, album: 'LykkeLiga · Hele pladen', artwork: [{ src: t.cover, sizes: '1024x1024' }] });
@@ -203,7 +213,7 @@ if (al && D.album?.length) {
   function load(k, play) {
     i = (k + T.length) % T.length; status.textContent = '';
     au.src = T[i].audio; range.value = 0; setV(range); cur.textContent = '0:00'; dur.textContent = '–:––';
-    show(i); if (play) start();
+    show(i, true); if (play) start();
   }
   function start() {
     if (!au.src) au.src = T[i].audio;
