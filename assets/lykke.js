@@ -127,7 +127,10 @@ if ($('#mixer') && D.mixer) {
   const ew = v => v < 30 ? 'Rolig' : v < 65 ? 'Mellem' : 'Høj';
   function updM() {
     $('#bpmOut').textContent = M.bpm + ' BPM'; $('#energyOut').textContent = ew(M.en);
-    $('#promptText').innerHTML = `Glad <span class="k">${GENRES[M.g].l.toLowerCase()}</span> på dansk, <span class="k">${M.bpm} BPM</span>, <span class="k">${ew(M.en).toLowerCase()}</span> energi. Plads til spillerens egen stemme i omkvædet. Teksten handler om <span class="k">${THEMES[M.th]}</span>. Ingen genereret vokal.`;
+    /* artiklen kan give sin egen prompt-skabelon i window.LYKKE.mixer.prompt */
+    $('#promptText').innerHTML = D.mixer.prompt
+      ? D.mixer.prompt(GENRES[M.g].l, M.bpm, ew(M.en), THEMES[M.th])
+      : `<span class="k">${GENRES[M.g].l}</span> på dansk, <span class="k">${M.bpm} BPM</span>, <span class="k">${ew(M.en).toLowerCase()}</span> energi. Sangen handler om <span class="k">${THEMES[M.th]}</span>.`;
   }
   updM();
   let ac, audioOn = false, timer, step16 = 0, next = 0;

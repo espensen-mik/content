@@ -24,17 +24,16 @@ const COMPS = [
  ['Triptykon','media','Tre stående stills side om side, hentet direkte fra Mux. Den bedste måde at vise telefonvideo som billeder.',['Altid 4:5','Midterste billede forskudt','To billeder på mobil'],'triptykon'],
  ['Foto, fuld bredde','media','Stort billede, der bryder læsekolonnen og giver pause.',['21:9 på desktop, mindst 240px højt','Billedtekst under, med mono-label','Højst ét pr. kapitel'],'spor-1'],
  ['Karaoke-citat','play','Spillerens citat lyser op ord for ord, mens man ruller. Nøgleordet bliver coral.',['Citat på maks 20 ord','Navn, alder og position','Ét pr. kapitel'],'citat'],
- ['Casekort med før/efter','media','Konkret eksempel fra projektet. Slideren viser foto og AI-version side om side.',['Hvem, hvad de gjorde, hvad AI gjorde','Menneske- og AI-del altid adskilt','AI-billede mærket i label'],'case'],
  ['Workshop-case','media','En proces fortalt i trin med rigtige fotos. Hvert trin er et billede med en notelap, der lander på billedet, og trin-chips der følger med.',['3–5 trin, ét foto pr. trin','Kort tekst på notelappen','Billeder i 800 og 1600 px'],'workshop'],
- ['Case-række','read','Tre korte cases side om side, når der er flere eksempler end plads.',['Foto 3:2, eyebrow, titel, to sætninger','2–3 cases pr. række','Også til cases uden billede'],'case-raekke'],
  ['Filmstrimmel','media','Vandret galleri med blandede formater og tæller.',['3–8 billeder','Mix af 3:2 og 4:5','Kan styres med pile og tastatur'],'filmstrip'],
  ['Scrollytelling','play','Fast figur, der skifter, mens tekst-trin ruller forbi. Til processer med 3–5 trin.',['Hvert trin kan læses alene','Figur står øverst på mobil','Trin mærket menneske eller AI'],'scrolly'],
  ['Prompt-mixer','play','Læseren skruer på genre, tempo og energi og ser prompten blive bygget. Lyd kun ved klik.',['Forklarer et begreb, ikke pynt','Tydeligt hvad der er AI, og hvad der ikke er','Ét interaktivt modul pr. kapitel'],'mixer'],
  ['Danmarkskort','media','Enkelt kort, der viser hvor holdene kommer fra. Nål med bynavn på kortet og holdene i en liste ved siden af.',['Byer fra lykkeliga.dk, ingen kontaktdata','Kun bynavn på nålene, holdnavne i listen','Ren illustration uden afspilning'],'holdkort'],
  ['Albumafspiller','play','Alle projektets sange som en plade: cover med vinyl, der glider ud og drejer, farvetone fra coveret og en nummerliste.',['Starter kun ved klik','Næste sang spiller automatisk','Virker med låseskærm og tastatur'],'albummet'],
  ['Biograf','media','Musikvideoer i 16:9 på en mørk scene. Titelkort på plakaten, lysskær fra billedet og en filmrulle med levende forhåndsvisning.',['Mux Player, starter kun ved klik','Forhåndsvisning hentes først ved hover','Kun én lyd ad gangen på siden'],'musikvideoer'],
- ['Metodeboks','read','Forklarer åbent, hvordan AI er brugt, og hvordan spillerne er beskyttet.',['Obligatorisk i artikler om AI','Samtykke, rettigheder, mærkning','Placeres før credits'],'metode'],
- ['Liner notes','read','Credits i albumstil med medvirkende og værktøjer.',['Altid sidst','Nævn værktøjstyper','Fotografer krediteres'],'spor-4']
+ ['Forskningsboks','read','Fremhæver forskning eller kilder: en kort forklaring, citatet stort og den fulde reference nederst.',['Citatet på originalsproget','Fuld kildehenvisning','Højst én pr. kapitel'],'forskning'],
+ ['Erfaringsboks','read','Samler projektets erfaringer i nummererede kort på mint. Det første kort kan fylde hele bredden.',['3–8 erfaringer','Kort overskrift, så forklaring','Placeres mod slutningen'],'erfaringer'],
+ ['Liner notes','read','Credits i albumstil med medvirkende og værktøjer.',['Altid sidst','Nævn værktøjstyper','Fotografer krediteres'],'credits']
 ];
 const KL = { read: 'Læsning', media: 'Medier', play: 'Leg' };
 $('#compList').innerHTML = COMPS.map(([n, k, d, r, id]) => `<article class="comp"><header><h3>${n}</h3><span class="kind ${k}">${KL[k]}</span></header><p>${d}</p><ul>${r.map(x => `<li>${x}</li>`).join('')}</ul><a class="go" href="${ART}${id ? '#' + id : ''}">Se i artiklen →</a></article>`).join('');

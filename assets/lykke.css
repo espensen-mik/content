@@ -604,3 +604,29 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .workshop>.ws-nav li{background:var(--paper-2)}
 .workshop>.ws-nav li.on{background:var(--ink)}
 @media (max-width:820px){.workshop>.ws-nav{position:static;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.workshop>.ws-nav li{flex:none}}
+
+/* ---- Forskningsboks ---- */
+.research{margin-block:var(--s5);padding:clamp(24px,3.4vw,44px);background:var(--paper-2);border-top:4px solid var(--coral);box-shadow:0 18px 40px rgba(22,51,88,.08)}
+.research p{margin:var(--s3) 0 0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.research blockquote{position:relative;margin:var(--s4) 0 var(--s3);padding-top:30px;font-family:var(--f-display);font-style:italic;font-weight:700;font-variation-settings:"wdth" 92;font-size:clamp(22px,2.5vw,31px);line-height:1.22;color:var(--ink);text-wrap:balance}
+.research blockquote::before{content:"\201C";position:absolute;left:-4px;top:-18px;font-style:normal;font-weight:900;font-size:84px;line-height:1;color:var(--coral)}
+.research cite{display:block;font-style:normal;font-size:13px;line-height:1.5;color:var(--muted);border-top:1px solid var(--line);padding-top:var(--s3)}
+.research cite i{font-style:italic}
+
+/* ---- Erfaringsboks ---- */
+.lessons{margin-block:var(--s5) var(--s6);padding:clamp(24px,4vw,56px);background:var(--mint);color:var(--ink)}
+.lessons header{margin-bottom:clamp(20px,3vw,36px)}
+.lessons header .eyebrow{color:var(--teal-ink)}
+.lessons h3{font-family:var(--f-display);font-variation-settings:"wdth" 78;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,64px);line-height:.92;margin:var(--s2) 0 0}
+.lessons ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,24px)}
+.lesson{background:var(--paper-2);padding:clamp(20px,2.6vw,32px);position:relative}
+.lesson-wide{grid-column:1/-1;column-count:2;column-gap:clamp(24px,3vw,48px)}
+.lesson-wide .ls-n,.lesson-wide h4{column-span:all}
+.ls-n{display:block;font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 70;font-size:44px;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--coral)}
+.lesson h4{font-family:var(--f-display);font-variation-settings:"wdth" 85;font-weight:900;text-transform:uppercase;font-size:clamp(20px,2vw,25px);line-height:1.05;margin:10px 0 12px;color:var(--ink);text-wrap:balance}
+.lesson p{margin:0 0 12px;font-size:16px;line-height:1.6;color:var(--ink-2);break-inside:avoid-column}
+.lesson p:last-child{margin-bottom:0}
+@media (max-width:760px){.lessons ol{grid-template-columns:1fr}.lesson-wide{column-count:1}}
+
+/* ---- Scrollytelling: rigtigt cover ---- */
+.scrolly-fig .cover-img{width:58%;aspect-ratio:1;object-fit:cover;display:block;margin:auto auto 16px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
