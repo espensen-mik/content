@@ -35,7 +35,7 @@ Stills og postere hentes direkte fra Mux:
 
 ## Cache
 
-Siderne henter CSS og JS med et versionsnummer, fx `/assets/lykke.js?v=202611131320`. Når `assets/` ændres, skal tallet opdateres i alle `index.html`-filer, så browsere ikke bruger en gammel kopi sammen med ny HTML.
+Siderne henter CSS og JS med et versionsnummer, fx `/assets/lykke.js?v=202611131326`. Når `assets/` ændres, skal tallet opdateres i alle `index.html`-filer, så browsere ikke bruger en gammel kopi sammen med ny HTML.
 
 ## Lokalt
 

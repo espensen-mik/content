@@ -260,56 +260,15 @@ if (al && D.album?.length) {
   new IntersectionObserver(es => es.forEach(e => e.isIntersecting && al.classList.add('ready')), { threshold: .4 }).observe(al);
 }
 
-/* ---- Danmarkskort med hold ---- */
+/* ---- Danmarkskort med hold (illustration) ---- */
 const dk = $('#holdkort');
 if (dk && D.teams?.length) {
-  const [MW, MH] = D.mapSize, album = window.Lykke.album, tracks = album?.tracks || [];
-  const pinsEl = $('.dk-pins', dk), listEl = $('.dk-list', dk);
-  const songsOf = t => tracks.map((s, k) => ({ ...s, k })).filter(s => s.artist === t.artist);
-  pinsEl.innerHTML = D.teams.map((t, n) => `<button class="dk-pin" data-n="${n}" data-side="${t.side || 'r'}" style="left:${t.x / MW * 100}%;top:${t.y / MH * 100}%" aria-label="${t.name}, ${t.city}"><span class="dot"></span><span class="lbl"><b>${t.city}</b><span>${t.name}</span></span></button>`).join('');
-  const films = D.films || [];
-  listEl.innerHTML = D.teams.map((t, n) => {
-    const f = films.findIndex(x => x.artist === t.artist);
-    const film = f >= 0 && $('#musikvideoer') ? `<button class="film" data-f="${f}">Se musikvideoen</button>` : '';
-    return `<li data-n="${n}"><button class="team" data-n="${n}"><b>${t.name}</b><span>${t.city} · ${t.club}</span></button>${album || film ? `<div class="dk-songs">${album ? songsOf(t).map(s => `<button data-k="${s.k}" aria-pressed="false">${s.title}</button>`).join('') : ''}${film}</div>` : ''}</li>`;
-  }).join('');
-  $$('.dk-songs .film', listEl).forEach(b => b.addEventListener('click', () => window.Lykke.cinema?.play(+b.dataset.f, true)));
-  /* nålen pulserer, når holdets sang eller musikvideo spiller */
-  const live = { track: -1, film: -1 };
-  const paintLive = () => pins.forEach((p, k) => p.classList.toggle('live', k === live.track || k === live.film));
-  document.addEventListener('lykke:film', e => {
-    const n = D.teams.findIndex(t => t.artist === e.detail.artist);
-    live.film = e.detail.playing ? n : -1; paintLive();
-    if (e.detail.playing && n >= 0) focusTeam(n, true);
-  });
+  const [MW, MH] = D.mapSize, pinsEl = $('.dk-pins', dk), listEl = $('.dk-list', dk);
+  pinsEl.innerHTML = D.teams.map((t, n) => `<span class="dk-pin" data-n="${n}" data-side="${t.side || 'r'}" style="left:${t.x / MW * 100}%;top:${t.y / MH * 100}%"><span class="dot"></span><span class="lbl"><b>${t.city}</b></span></span>`).join('');
+  listEl.innerHTML = D.teams.map((t, n) => `<li data-n="${n}"><b>${t.name}</b><span>${t.city} · ${t.club}</span></li>`).join('');
   const pins = $$('.dk-pin', dk), items = $$('li', listEl);
-  let sel = -1;
-  function focusTeam(n, sticky) {
-    if (sticky) sel = n;
-    const a = n ?? sel;
-    pins.forEach((p, k) => p.classList.toggle('on', k === a));
-    items.forEach((l, k) => l.classList.toggle('on', k === a));
-  }
-  [...pins, ...$$('.team', listEl)].forEach(b => {
-    const n = +b.dataset.n;
-    b.addEventListener('mouseenter', () => focusTeam(n));
-    b.addEventListener('mouseleave', () => focusTeam(null));
-    b.addEventListener('focus', () => focusTeam(n));
-    b.addEventListener('blur', () => focusTeam(null));
-    b.addEventListener('click', () => {
-      focusTeam(n, true);
-      /* et klik på en nål viser holdet i listen; på telefon står listen under kortet */
-      if (b.classList.contains('dk-pin')) items[n].scrollIntoView({ block: 'nearest', behavior: RM ? 'auto' : 'smooth' });
-    });
-  });
-  $$('.dk-songs button[data-k]', listEl).forEach(b => b.addEventListener('click', () => album.play(+b.dataset.k)));
-  document.addEventListener('lykke:track', e => {
-    const { index, artist, playing } = e.detail;
-    const n = D.teams.findIndex(t => t.artist === artist);
-    live.track = playing ? n : -1; paintLive();
-    $$('.dk-songs button[data-k]', listEl).forEach(b => b.setAttribute('aria-pressed', playing && +b.dataset.k === index));
-    if (playing && n >= 0) focusTeam(n, true);
-  });
+  const mark = n => { pins.forEach((p, k) => p.classList.toggle('on', k === n)); items.forEach((l, k) => l.classList.toggle('on', k === n)) };
+  [...pins, ...items].forEach(el => { el.addEventListener('mouseenter', () => mark(+el.dataset.n)); el.addEventListener('mouseleave', () => mark(-1)) });
 }
 
 /* ---- Biograf: musikvideoer (Mux) ---- */

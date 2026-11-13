@@ -492,44 +492,28 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .dk-north path{fill:var(--ink);stroke:none}
 .dk-scale text,.dk-north text{font-family:var(--f-mono);font-size:11px;fill:var(--ink);text-anchor:middle;letter-spacing:.06em}
 .dk-pins{position:absolute;inset:0;pointer-events:none}
-.dk-pin{all:unset;box-sizing:border-box;position:absolute;pointer-events:auto;cursor:pointer;display:flex;align-items:center;gap:8px;transform:translate(-11px,-50%);padding:4px 0}
+.dk-pin{box-sizing:border-box;position:absolute;pointer-events:auto;cursor:default;display:flex;align-items:center;gap:8px;transform:translate(-11px,-50%);padding:4px 0}
 .dk-pin[data-side="l"]{flex-direction:row-reverse;transform:translate(calc(-100% + 11px),-50%)}
 .dk-pin .dot{position:relative;width:22px;height:22px;flex:none;display:grid;place-items:center}
 .dk-pin .dot::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 3px #fff,0 4px 10px rgba(22,51,88,.3);transition:transform .3s var(--ease)}
 .dk-pin .dot::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--coral);opacity:0;transform:scale(.4)}
 .dk-pin .lbl{display:flex;flex-direction:column;line-height:1.1;background:rgba(255,250,242,.92);padding:5px 9px;border-radius:var(--r-sm);box-shadow:0 2px 8px rgba(22,51,88,.12);white-space:nowrap}
 .dk-pin .lbl b{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
-.dk-pin .lbl span{font-size:12px;color:var(--muted);max-width:0;overflow:hidden;opacity:0;transition:max-width .4s var(--ease),opacity .3s}
-.dk-pin:focus-visible .lbl{outline:3px solid var(--teal);outline-offset:2px}
 .dk-pin.on .dot::before{transform:scale(1.35)}
-.dk-pin.on .lbl span{max-width:240px;opacity:1}
 .dk-pin.on{z-index:2}
-.dk-pin.live .dot::after{animation:dk-ping 1.6s var(--ease) infinite}
-@keyframes dk-ping{0%{opacity:.9;transform:scale(.4)}100%{opacity:0;transform:scale(1.9)}}
 .dk-side .eyebrow{margin-bottom:var(--s3)}
 .dk-list{list-style:none;margin:var(--s3) 0 0;padding:0;counter-reset:dk}
-.dk-list li{border-top:1px solid var(--line);padding:14px 0 14px 44px;position:relative;counter-increment:dk;transition:background .3s}
+.dk-list li{border-top:1px solid var(--line);padding:12px 0 12px 44px;position:relative;counter-increment:dk;transition:background .3s}
 .dk-list li:last-child{border-bottom:1px solid var(--line)}
 .dk-list li::before{content:counter(dk,decimal-leading-zero);position:absolute;left:0;top:16px;font-family:var(--f-mono);font-size:12px;color:var(--teal-ink)}
-.dk-list .team{all:unset;cursor:pointer;display:block}
-.dk-list .team b{display:block;font-family:var(--f-display);font-variation-settings:"wdth" 82;font-weight:800;font-size:19px;line-height:1.15;text-transform:uppercase;color:var(--ink)}
-.dk-list .team span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
-.dk-list .team:focus-visible{outline:3px solid var(--teal);outline-offset:4px;border-radius:2px}
-.dk-songs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.dk-songs button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink);background:rgba(255,250,242,.8);border:1px solid var(--line);padding:6px 11px 6px 9px;border-radius:var(--r-pill);transition:background .2s,border-color .2s}
-.dk-songs button::before{content:"";border-left:7px solid var(--coral);border-top:4.5px solid transparent;border-bottom:4.5px solid transparent}
-.dk-songs button:hover{border-color:var(--ink)}
-.dk-songs button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-.dk-songs button[aria-pressed="true"]{background:var(--ink);color:var(--on-stage);border-color:var(--ink)}
-.dk-songs button[aria-pressed="true"]::before{border:0;width:8px;height:9px;background:linear-gradient(90deg,var(--coral-light) 0 3px,transparent 3px 5px,var(--coral-light) 5px)}
-.dk-list li.on .team b{color:var(--coral-ink)}
+.dk-list li b{display:block;font-family:var(--f-display);font-variation-settings:"wdth" 82;font-weight:800;font-size:19px;line-height:1.15;text-transform:uppercase;color:var(--ink)}
+.dk-list li span{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+.dk-list li.on b{color:var(--coral-ink)}
 .dkmap figcaption{grid-column:1/-1;font-size:13px;color:var(--muted)}
 .dkmap figcaption .mono{color:var(--teal-ink);margin-right:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .dkmap + .album{margin-top:var(--s4)}
 @media (max-width:820px){.dkmap{grid-template-columns:1fr}.dk-map{max-width:440px;margin-inline:auto;width:100%}}
 @media (max-width:420px){.dk-pin .lbl{padding:3px 6px}.dk-pin .lbl b{font-size:10px}}
-@media (prefers-reduced-motion:reduce){.dk-pin.live .dot::after{animation:none;opacity:.6;transform:scale(1.3)}}
-@media (max-width:560px){.dk-pin .lbl span{display:none}}
 
 /* ---- Biograf: musikvideoer ---- */
 .cinema{position:relative;isolation:isolate;overflow:hidden;overflow:clip;background:#0a1a30;color:var(--on-stage);margin-block:var(--s6);padding-block:clamp(48px,8vw,104px)}
@@ -577,8 +561,5 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .cinema figcaption .mono{color:var(--spot);margin-right:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 @media (max-width:640px){.cn-play{position:static;align-self:flex-start;margin-top:10px;padding:11px 16px 11px 14px;font-size:12px}.cn-song{font-size:clamp(22px,7vw,34px)}.cn-reel{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.cn-reel li{scroll-snap-align:start}}
 @media (prefers-reduced-motion:reduce){.cn-thumb .anim{display:none}.cn-thumb .now i{animation:none;height:70%}}
-.dk-songs .film{background:var(--ink);color:var(--on-stage);border-color:var(--ink)}
-.dk-songs .film::before{border-left-color:var(--coral-light)}
-.dk-songs .film:hover{background:var(--stage-2)}
 .cinema:not(.rolling) .cn-screen mux-player{--controls:none}
 .cinema.paused .cn-thumb .now i{animation-play-state:paused}
