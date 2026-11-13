@@ -33,7 +33,7 @@ const COMPS = [
  ['Biograf','media','Musikvideoer i 16:9 på en mørk scene. Titelkort på plakaten, lysskær fra billedet og en filmrulle med levende forhåndsvisning.',['Mux Player, starter kun ved klik','Forhåndsvisning hentes først ved hover','Kun én lyd ad gangen på siden'],'musikvideoer'],
  ['Forskningsboks','read','Fremhæver forskning eller kilder: en kort forklaring, citatet stort og den fulde reference nederst.',['Citatet på originalsproget','Fuld kildehenvisning','Højst én pr. kapitel'],'forskning'],
  ['Erfaringsboks','read','Samler projektets erfaringer i nummererede kort på mint. Det første kort kan fylde hele bredden.',['3–8 erfaringer','Kort overskrift, så forklaring','Placeres mod slutningen'],'erfaringer'],
- ['Liner notes','read','Credits i albumstil med medvirkende og værktøjer.',['Altid sidst','Nævn værktøjstyper','Fotografer krediteres'],'credits']
+ ['Afslutning','read','Artiklens footer på navy: støtte-kort med partnerens logo i egen farve, credits i albumstil og en bundlinje med logo og "Til toppen".',['Støttepartnere i et lyst kort','Credits altid sidst','Ingen pladsholdere'],'afslutning']
 ];
 const KL = { read: 'Læsning', media: 'Medier', play: 'Leg' };
 $('#compList').innerHTML = COMPS.map(([n, k, d, r, id]) => `<article class="comp"><header><h3>${n}</h3><span class="kind ${k}">${KL[k]}</span></header><p>${d}</p><ul>${r.map(x => `<li>${x}</li>`).join('')}</ul><a class="go" href="${ART}${id ? '#' + id : ''}">Se i artiklen →</a></article>`).join('');

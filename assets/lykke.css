@@ -640,3 +640,31 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .appshot .btn{margin-top:var(--s2);text-decoration:none}
 @media (max-width:820px){.appshot{grid-template-columns:1fr;padding:0 var(--s4) var(--s4)}.appshot figcaption{padding-top:0}}
 .appshot figcaption,.appshot figcaption p{color:var(--on-stage)}
+
+/* ---- Topbjælke: link til lykkeliga.dk ---- */
+.bar-cta{flex:none;display:inline-flex;align-items:center;gap:6px;color:var(--stage);background:var(--on-stage);text-decoration:none;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:8px 14px;border-radius:var(--r-pill);white-space:nowrap;transition:background .2s}
+.bar-cta:hover{background:#fff}
+.bar-cta:focus-visible{outline:3px solid var(--spot);outline-offset:2px}
+@media (max-width:560px){.bar-cta .long{display:none}.bar-cta{padding:7px 11px;font-size:11px}}
+
+/* ---- Artiklens afslutning ---- */
+.art-foot{background:var(--stage);color:var(--on-stage);padding:clamp(48px,7vw,96px) 0 clamp(28px,4vw,40px)}
+.af-inner{width:min(var(--wide),100% - 32px);margin-inline:auto}
+.af-support{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3) var(--s5);background:var(--paper-2);color:var(--ink);padding:clamp(22px,3vw,36px) clamp(22px,4vw,48px)}
+.af-label{font-family:var(--f-display);font-variation-settings:"wdth" 85;font-weight:900;text-transform:uppercase;font-size:clamp(22px,2.6vw,34px);line-height:1}
+.af-sponsor{display:block;line-height:0}
+.af-sponsor img{width:clamp(170px,22vw,237px);height:auto}
+.af-sponsor:focus-visible{outline:3px solid var(--teal);outline-offset:6px}
+.af-credits{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--s4) var(--s5);margin:clamp(36px,5vw,56px) 0 0}
+.af-credits dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--spot);margin-bottom:6px}
+.af-credits dd{margin:0;font-size:15px;line-height:1.55;color:var(--on-stage-2)}
+.af-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3) var(--s4);margin-top:clamp(36px,5vw,56px);padding-top:var(--s4);border-top:1px solid var(--stage-line)}
+.af-logo{display:block;width:110px;color:var(--on-stage)}
+.af-logo svg{display:block;width:100%;height:auto}
+.af-thanks{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--on-stage-2)}
+.af-top{margin-left:auto;color:var(--on-stage);font-weight:700;font-size:14px;text-decoration:none}
+.af-top:hover{text-decoration:underline}
+@media (max-width:560px){.af-support{flex-direction:column;align-items:flex-start}.af-top{margin-left:0}}
+.af-credits{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:980px){.af-credits{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.af-credits{grid-template-columns:1fr}}
