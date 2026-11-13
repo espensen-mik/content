@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sådan brugte vi generativ AI til at gøre LykkeLiga-spillerne til musikstjerner · LykkeLiga</title>
+<meta name="description" content="Det begyndte med to veninder, en iPhone og en eftermiddag i Norge. Historien om Optur og LykkeLigas musikprojekt.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#163358">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=DM+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="/assets/lykke.css">
+<script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3.14.1" defer></script>
+<script src="/assets/lykke.js" defer></script>
+</head>
+<body>
+<header class="bar" id="bar">
+  <a class="logo" href="/" aria-label="Lykkeliga Content – forsiden"><svg viewBox="0 0 202.317 74.927" fill="currentColor" role="img" aria-label="Lykkeliga"><g transform="translate(101.159 37.464)"><g transform="translate(-101.159 -37.464)"><g><path d="M30.733,41.252a9.352,9.352,0,0,0,1.1-2.237,5.239,5.239,0,0,0,.324-1.751q-.034-.647-.486-.713t-1.361.842a3.733,3.733,0,0,1-2.723.843,30,30,0,0,1-4.312-.357q-2.432-.356-5.187-.842a43.293,43.293,0,0,0-5.349-.616q2.268-3.307,4.992-7.716T23.018,19.6q2.561-4.7,4.668-9.24a58.466,58.466,0,0,0,3.145-8.1,1.426,1.426,0,0,0-.26-1.459A2.6,2.6,0,0,0,29.047.08a8.036,8.036,0,0,0-2.269,0,9.877,9.877,0,0,0-2.464.649,8.654,8.654,0,0,0-2.172,1.265,3.792,3.792,0,0,0-1.3,1.75q-1.167,3.438-2.561,7.035T15.4,17.846q-1.492,3.47-3.047,6.646T9.337,30.23a43.406,43.406,0,0,1-2.756,4.312,10.258,10.258,0,0,1-2.269,2.4A7.136,7.136,0,0,0,1.491,38.5,4.787,4.787,0,0,0,.162,40.571a3.6,3.6,0,0,0,0,2.14,3.913,3.913,0,0,0,1.1,1.75,4.181,4.181,0,0,0,2.01.973A5.082,5.082,0,0,0,6,45.175a4.888,4.888,0,0,0,1.653-1,11.847,11.847,0,0,0,1.394-1.524,10.015,10.015,0,0,1,4.376.065q2.3.519,4.539,1.167t4.344,1.1a7.729,7.729,0,0,0,3.858-.065,8.144,8.144,0,0,0,2.659-1.524A10.3,10.3,0,0,0,30.733,41.252Z" transform="translate(0 0)" ></path><path d="M156.391,48.412a15.589,15.589,0,0,1-4.377,2.172,14.234,14.234,0,0,1-4.117.681,7.086,7.086,0,0,1-3.274-.713,3.55,3.55,0,0,1-1.848-2.01,15.172,15.172,0,0,0,6.321-1.167,15.677,15.677,0,0,0,4.8-3.079,10.62,10.62,0,0,0,2.691-3.988,5.529,5.529,0,0,0,.13-3.89A4.607,4.607,0,0,0,154.8,34.18a7.091,7.091,0,0,0-3.08-.973,12.936,12.936,0,0,0-3.793.259,13.227,13.227,0,0,0-3.987,1.556,16.992,16.992,0,0,0-3.663,2.918,14.718,14.718,0,0,0-2.82,4.247,13.875,13.875,0,0,0-1.264,4.96,10.443,10.443,0,0,0,.026,1.3l-.058.032a9.406,9.406,0,0,1-2.982,1.037,9.614,9.614,0,0,1-2.2.195,2.8,2.8,0,0,1-1.653-1.1,21.169,21.169,0,0,1-1.524-2.075,26.129,26.129,0,0,1-1.491-2.918q2.658-1.491,5.446-3.144a52.169,52.169,0,0,1,5.252-2.756.722.722,0,0,0,.357-1.135,3.97,3.97,0,0,0-1.427-1.362,6.538,6.538,0,0,0-2.3-.843,3.421,3.421,0,0,0-2.334.357,15.534,15.534,0,0,0-1.686,1.1q-.972.714-2.042,1.524T125.4,39.075q-1.1.908-2.009,1.75,1.426-3.047,2.885-6.094t2.691-5.576q1.23-2.529,2.042-4.215t.941-2.01q.259-.519-.486-.811a5.476,5.476,0,0,0-1.815-.324,6.969,6.969,0,0,0-2.108.259,2.023,2.023,0,0,0-1.361.94q-.26.455-1.265,2.432t-2.431,4.863q-1.428,2.886-3.08,6.257t-3.144,6.646c-.855,1.877-1.617,3.627-2.3,5.264l-.038.02a9.408,9.408,0,0,1-2.982,1.037,9.611,9.611,0,0,1-2.2.195,2.8,2.8,0,0,1-1.653-1.1,21.1,21.1,0,0,1-1.524-2.075,25.983,25.983,0,0,1-1.491-2.918q2.657-1.491,5.446-3.144a52.122,52.122,0,0,1,5.252-2.756.722.722,0,0,0,.357-1.135,3.973,3.973,0,0,0-1.427-1.362,6.538,6.538,0,0,0-2.3-.843,3.421,3.421,0,0,0-2.334.357,15.534,15.534,0,0,0-1.686,1.1q-.973.714-2.042,1.524t-2.172,1.718q-1.1.908-2.01,1.75,1.425-3.047,2.885-6.094t2.691-5.576q1.232-2.529,2.042-4.215t.941-2.01q.258-.519-.487-.811a5.472,5.472,0,0,0-1.815-.324,6.971,6.971,0,0,0-2.107.259,2.021,2.021,0,0,0-1.361.94q-.26.455-1.265,2.432t-2.431,4.863q-1.427,2.886-3.08,6.257t-3.145,6.646c-.855,1.875-1.616,3.624-2.293,5.26l-.04.024a22.96,22.96,0,0,1-3.7,1.88,11.263,11.263,0,0,1-2.723.649q1.037-2.529,1.945-5.252a21.567,21.567,0,0,1,1.1-2.626q.713-1.459,1.524-3.015t1.718-3.08q.908-1.523,1.751-2.756c.216-.3.107-.551-.324-.745A4.139,4.139,0,0,0,91.3,33.24a9.39,9.39,0,0,0-2.139.259,3.347,3.347,0,0,0-1.621.778,9.4,9.4,0,0,0-1.07,1.459q-.681,1.07-1.491,2.5t-1.621,2.95q-.812,1.524-1.394,2.756a15.925,15.925,0,0,1-2.788,3.047,9.119,9.119,0,0,1-2.594,1.621,1.387,1.387,0,0,1-1.654-.259q-.551-.647-.032-2.594a15.69,15.69,0,0,1,.908-2.5q.647-1.459,1.491-3.048t1.75-3.144q.908-1.557,1.751-2.788c.259-.3.162-.551-.292-.745a4.379,4.379,0,0,0-1.718-.292,9.387,9.387,0,0,0-2.139.259,3.345,3.345,0,0,0-1.621.778A19.084,19.084,0,0,0,73.855,35.9q-.778,1.166-1.588,2.658T70.646,41.6a27.68,27.68,0,0,0-1.264,2.723,15.535,15.535,0,0,0-1.07,4.441,5.1,5.1,0,0,0,.746,3.4,11.636,11.636,0,0,0-4.993,3.63,7.271,7.271,0,0,0-1.621,4.279A4.546,4.546,0,0,0,64.1,63.616a6.983,6.983,0,0,0,4.765,1.459,14.223,14.223,0,0,0,8.85-2.918,17.355,17.355,0,0,0,3.209-3.21,26.774,26.774,0,0,0,2.594-4.117,10.361,10.361,0,0,0,2.95-.746,15.246,15.246,0,0,0,3.339-1.977c.258-.21.5-.419.724-.629-.312.85-.555,1.581-.725,2.186q-.129.519.681.811a6.077,6.077,0,0,0,1.88.324,7.327,7.327,0,0,0,2.075-.227,1.49,1.49,0,0,0,1.2-.908q.324-1.1,1.2-3.274t2.107-4.9a27.784,27.784,0,0,0,.908,2.658,19.281,19.281,0,0,0,1.394,2.853,13.807,13.807,0,0,0,1.783,2.4,3.773,3.773,0,0,0,2.139,1.232,6.007,6.007,0,0,0,3.08-.292,13.527,13.527,0,0,0,2.852-1.427,14.493,14.493,0,0,0,1.576-1.2q-.406,1.123-.637,1.946-.129.519.681.811a6.075,6.075,0,0,0,1.88.324,7.327,7.327,0,0,0,2.075-.227,1.49,1.49,0,0,0,1.2-.908q.324-1.1,1.2-3.274t2.107-4.9a27.779,27.779,0,0,0,.908,2.658,19.291,19.291,0,0,0,1.394,2.853,13.807,13.807,0,0,0,1.783,2.4,3.774,3.774,0,0,0,2.14,1.232,6,6,0,0,0,3.079-.292,13.534,13.534,0,0,0,2.853-1.427,13.832,13.832,0,0,0,2.334-1.912c.322-.332.6-.64.835-.927a7.53,7.53,0,0,0,.428,1.154,6.931,6.931,0,0,0,2.626,2.918,10.379,10.379,0,0,0,4.312,1.459,11.408,11.408,0,0,0,4.636-.292,17.087,17.087,0,0,0,3.955-1.653,14.68,14.68,0,0,0,3.015-2.269,17.89,17.89,0,0,0,1.24-1.363,8.788,8.788,0,0,1-.224-1.686C156.463,48.367,156.429,48.387,156.391,48.412Zm-11.347-7a12.522,12.522,0,0,1,2.561-2.2,7.99,7.99,0,0,1,2.5-1.1,1.755,1.755,0,0,1,1.686.259,1.259,1.259,0,0,1,.064,1.589,6.182,6.182,0,0,1-1.783,1.977,13.308,13.308,0,0,1-3.08,1.718,11.06,11.06,0,0,1-3.89.811A10.768,10.768,0,0,1,145.044,41.409ZM73.4,58.234a4.949,4.949,0,0,1-3.631.94q-1.362-.194-1.556-.875a1.523,1.523,0,0,1,.551-1.459A7.486,7.486,0,0,1,71.1,55.349a11.665,11.665,0,0,1,3.729-.908,14.814,14.814,0,0,1,1.945,0A13.922,13.922,0,0,1,73.4,58.234Z" transform="translate(-34.727 -12.12)" ></path></g><g transform="translate(49.262 8.159)"><path d="M331.4,34.83a4.241,4.241,0,0,0,2.2-.616,6.467,6.467,0,0,0,1.783-1.556,7.7,7.7,0,0,0,1.167-2.042,4.826,4.826,0,0,0,.356-2.043,2.635,2.635,0,0,0-.584-1.556,2.091,2.091,0,0,0-1.686-.616,4.124,4.124,0,0,0-3.047,1.329,8.3,8.3,0,0,0-1.88,2.885,4.84,4.84,0,0,0-.259,2.885A1.74,1.74,0,0,0,331.4,34.83Z" transform="translate(-232.415 -22.841)" ></path><path d="M260.333,46.579l0,.008q-2.906,1.74-4.1.868t-.227-3.6a25.02,25.02,0,0,1,1.07-2.626q.681-1.459,1.524-3.015t1.718-3.08q.876-1.523,1.718-2.756c.26-.3.162-.551-.292-.745a4.376,4.376,0,0,0-1.718-.292,9.381,9.381,0,0,0-2.139.259,3.349,3.349,0,0,0-1.621.778,5.1,5.1,0,0,0-.842,1.1l-.584-.908a4.712,4.712,0,0,0-2.69-1.589,8.026,8.026,0,0,0-3.566.1,13.965,13.965,0,0,0-3.955,1.686,19.475,19.475,0,0,0-3.923,3.177,20.981,20.981,0,0,0-3.145,4.15,17.835,17.835,0,0,0-1.815,4.279,11.939,11.939,0,0,0-.372,2.174c-.018.012-.032.018-.05.03q-1.881,1.166-3.274,1.848a15.147,15.147,0,0,1-2.562,1q.518-1.361,1.038-2.755t1.037-2.82a25.021,25.021,0,0,1,1.07-2.626q.681-1.459,1.491-3.015t1.685-3.08q.876-1.523,1.718-2.756c.259-.3.162-.551-.292-.745a4.378,4.378,0,0,0-1.718-.292,9.386,9.386,0,0,0-2.139.259,3.349,3.349,0,0,0-1.621.778,4.6,4.6,0,0,1-.356.454,6.112,6.112,0,0,0-.487.648,2.419,2.419,0,0,0-.292-.454,2.315,2.315,0,0,1-.292-.454,4.7,4.7,0,0,0-2.659-1.589,7.889,7.889,0,0,0-3.534.1,13.97,13.97,0,0,0-3.955,1.686,19.5,19.5,0,0,0-3.923,3.177,21,21,0,0,0-3.145,4.15,17.852,17.852,0,0,0-1.815,4.279,12.1,12.1,0,0,0-.365,2.029c-.1.049-.2.107-.315.175q-2.918,1.75-4.117.875t-.227-3.6q.907-2.334,2.172-4.96a38.872,38.872,0,0,1,2.95-5.089q.389-.518-.292-.778a4.892,4.892,0,0,0-1.718-.259,10.622,10.622,0,0,0-2.139.227,3.157,3.157,0,0,0-1.621.746,9.46,9.46,0,0,0-1.135,1.523q-.681,1.071-1.394,2.432t-1.394,2.82q-.681,1.459-1.135,2.626a29.786,29.786,0,0,0-1.2,3.372l0,.016c-.032.018-.06.03-.093.049a15.33,15.33,0,0,1-3.177,1.3,7.117,7.117,0,0,1-2.95.259A3.5,3.5,0,0,1,190.969,47a4.332,4.332,0,0,1-.842-2.95q2.529-2.14,5.058-4.668t4.733-5.122a49.8,49.8,0,0,0,3.825-5.09,21.051,21.051,0,0,0,2.334-4.6,6.309,6.309,0,0,0,.292-3.663A3.426,3.426,0,0,0,204,18.634a5.691,5.691,0,0,0-4.571.584,19.174,19.174,0,0,0-4.96,3.891,41.175,41.175,0,0,0-4.7,6.062,47.955,47.955,0,0,0-3.793,7.1,34.524,34.524,0,0,0-2.2,6.937,13.888,13.888,0,0,0-.281,3.24,8.779,8.779,0,0,0,.224,1.686c.054.223.114.44.186.649a6.811,6.811,0,0,0,6.549,4.863,9.079,9.079,0,0,0,4.9-1.394,15.731,15.731,0,0,0,3.566-2.918l.059-.07c0,.109,0,.222.006.329a3.591,3.591,0,0,0,.907,2.269,3.531,3.531,0,0,0,2.691.875,8.167,8.167,0,0,0,4.376-1.264,16.616,16.616,0,0,0,3.307-2.594c.258-.271.479-.526.67-.77.005.062,0,.125.01.186a5.553,5.553,0,0,0,1.232,3.08.387.387,0,0,0,.259.259,11.128,11.128,0,0,0-4.993,3.631,6.521,6.521,0,0,0-1.393,4.279,5.059,5.059,0,0,0,1.945,3.567,7.731,7.731,0,0,0,5.09,1.491,13.734,13.734,0,0,0,4.83-.94,14.7,14.7,0,0,0,3.955-2.366,18.913,18.913,0,0,0,3.242-3.534,32.635,32.635,0,0,0,2.626-4.377,13.6,13.6,0,0,0,3.08-1.1,19.473,19.473,0,0,0,3.274-2.075,9.94,9.94,0,0,0,1.389-1.352,5.6,5.6,0,0,0,1.075,2.519,4.462,4.462,0,0,0,2.269,1.491,7.524,7.524,0,0,0,2.983.195,11.079,11.079,0,0,0,3.4-1.038,18.96,18.96,0,0,0,3.534-2.2,3.338,3.338,0,0,0,.94,2.107,3.6,3.6,0,0,0,2.626.811,7.669,7.669,0,0,0,3.015-.616,13.29,13.29,0,0,0,2.626-1.459q.576-.415,1.072-.855c-.1,14.468-30.828,27.43-66.691,11.963-25.455-10.978-61.939-3.262-68.419.07-3.668,1.886-5.216,3.218-7.139,6.436-2.332,3.9-5.788,10.485-5.788,14.1,0,4.438,5.376,2.392,6.849,1.694C123.585,81.341,142.66,71.6,156.607,70.5c31.437-2.483,58.869,12.725,84.308,7.743C265.238,73.478,267.8,42.406,260.333,46.579ZM192.266,36.4a51.489,51.489,0,0,1,3.5-6.711,35.479,35.479,0,0,1,3.275-4.474,12.391,12.391,0,0,1,2.658-2.4q1.135-.68,1.589-.422.583.325-.356,2.237a33.51,33.51,0,0,1-2.853,4.571q-1.914,2.659-4.377,5.608t-4.863,5.349A29.631,29.631,0,0,1,192.266,36.4Zm24.9,21.3a5.528,5.528,0,0,1-4.085.94q-1.167-.194-1.362-.875a1.585,1.585,0,0,1,.454-1.459,5.988,5.988,0,0,1,2.172-1.459,12.941,12.941,0,0,1,3.793-.94q.647-.065,1.264-.1c.411-.023.832-.033,1.265-.033A13.515,13.515,0,0,1,217.162,57.7Zm9.888-18.024a31.272,31.272,0,0,1-2.366,4.053,8.524,8.524,0,0,1-1.815,1.977,6.84,6.84,0,0,1-1.913,1.07,4.1,4.1,0,0,1-1.686.259,1.6,1.6,0,0,1-1.134-.518,3.328,3.328,0,0,1-.195-2.885,12.259,12.259,0,0,1,4.409-5.965,8.935,8.935,0,0,1,2.042-1.07,3.721,3.721,0,0,1,1.686-.227,1.727,1.727,0,0,1,1.135.551Q227.925,37.827,227.05,39.674Zm24.476,0a28.389,28.389,0,0,1-2.334,4.053,8.16,8.16,0,0,1-1.848,1.977,7.489,7.489,0,0,1-1.912,1.07,3.912,3.912,0,0,1-1.653.259,1.6,1.6,0,0,1-1.135-.518,3.329,3.329,0,0,1-.195-2.885,10.675,10.675,0,0,1,2.27-3.987,11.1,11.1,0,0,1,2.107-1.978,8.159,8.159,0,0,1,2.042-1.07,3.793,3.793,0,0,1,1.686-.227,1.693,1.693,0,0,1,1.1.551Q252.369,37.827,251.526,39.674Z" transform="translate(-110.981 -18.382)" ></path></g></g></g></svg></a>
+  <span class="time" id="time" aria-hidden="true">00:00 / 11:00</span>
+  <nav class="switch" aria-label="Visning">
+    <a aria-current="page" href="/longreads/musikstjerner/">Long read</a>
+    <a href="/designsystem/">Designsystem</a>
+  </nav>
+  <button class="xray-btn" id="xray" aria-pressed="false" title="Vis komponentnavne i artiklen">Anatomi</button>
+  <div class="track" id="track" aria-hidden="true"><i></i></div>
+</header>
+
+<main id="view-artikel" class="article" data-minutes="11">
+
+<section class="hero flow" data-c="Hero · stående video">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner wide hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M47.6 300.4 228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>LykkeLiga Long Read</span>
+      <h1 class="h-hero" style="margin-top:20px">Sådan brugte vi generativ AI til at gøre LykkeLiga-spillerne til <span class="star" id="star">musikstjerner</span></h1>
+      <p class="lede" style="margin-top:28px">Det begyndte med to veninder, en iPhone og en eftermiddag i Norge. Sangen "Optur" fik over 100.000 visninger. Her er historien om, hvordan den blev til et helt projekt, og om det, maskinen ikke kunne.</p>
+      <div class="hero-meta">
+        <span><span class="mono">Spor</span> 4 kapitler</span>
+        <span><span class="mono">Spilletid</span> 11 min. læsning</span>
+        <span><span class="mono">Tekst</span> Lykkeliga-redaktionen</span>
+      </div>
+    </div>
+    <figure class="hero-video">
+      <mux-player id="heroVideo" playback-id="VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ" poster="https://image.mux.com/VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ/thumbnail.webp?time=1&amp;width=900" muted loop playsinline nohotkeys stream-type="on-demand" metadata-video-title="Optur (uddrag, hero)" aria-label="Uddrag af musikvideoen Optur med Kaya og Magda, uden lyd"></mux-player>
+      <a class="sound-btn" href="#optur"><span class="ico"></span>Se videoen med lyd</a>
+      <span class="ph-label">Optur · Kaya &amp; Magda</span>
+    </figure>
+  </div>
+  <div class="wide hero-notice"><p class="notice"><b>Delvis eksempel</b> Optur-videoen og historien i spor 1 er ægte. Øvrige tekster, tal og citater er pladsholdere.</p></div>
+</section>
+
+<!-- SPOR 1 -->
+<section class="paper flow" id="spor-1">
+  <div class="chapter-open" data-c="Kapitel-åbner">
+    <span class="track-no">01</span>
+    <div><span class="mono">Spor 1 · 03:00</span><h2 class="h-chapter">En optur i Norge</h2></div>
+    <div class="wave" aria-hidden="true"></div>
+  </div>
+  <div class="prose" data-c="Brødtekst">
+    <aside class="fact float" id="faktaboks" data-c="Faktaboks">
+      <header><h4>Optur i tal</h4><span class="tag">Fakta</span></header>
+      <p>Sangen blev lavet med musiktjenesten Suno på én eftermiddag. Musikvideoen er filmet på en iPhone i den norske natur.</p>
+      <div class="stats">
+        <div class="stat"><b>1</b><span>eftermiddag</span></div>
+        <div class="stat"><b>1</b><span>iPhone</span></div>
+        <div class="stat" style="grid-column:1/-1"><b>100.000+</b><span>visninger på sociale medier</span></div>
+      </div>
+    </aside>
+    <p class="drop">Det hele begyndte en hyggelig eftermiddag i Norge. LykkeLiga-spillerne Kaya og Magda var på tur, og musiktjenesten Suno var lige blevet lanceret i en ny og spændende version.</p>
+    <p>Kayas far, Mikael Espensen, satte sig med telefonen og begyndte at lege. Pigerne kom med ordene: at de spiller håndbold dagen lang, at Magda er et lyn, og at deres briller er cool. Mikael skrev dem ind, og Suno lavede musikken. Sangen fik navnet "Optur".</p>
+    <p>Suno bruger <button class="term" data-term="genai" aria-expanded="false">generativ AI</button> til at lave en hel sang ud fra en tekst og en kort beskrivelse af stilen. Men ordene, grinene og dansetrinene var pigernes egne.</p>
+    <p>Senere samme eftermiddag skød de musikvideoen med en iPhone ude i den norske natur. Uden manuskript og uden filmhold. Bare to veninder, der dansede mellem birketræerne.</p>
+  </div>
+
+  <figure class="musicvideo wide" id="optur" data-c="Musikvideo · stående 4:5">
+    <div class="mv-frame">
+      <mux-player id="opturVideo" playback-id="VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ" poster="https://image.mux.com/VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ/thumbnail.webp?time=1&amp;width=900" playsinline stream-type="on-demand" accent-color="#df6763" primary-color="#f9eedc" secondary-color="#163358" metadata-video-title="Optur" aria-label="Musikvideoen Optur med Kaya og Magda"></mux-player>
+    </div>
+    <div class="mv-side">
+      <span class="eyebrow">Musikvideo</span>
+      <h3 class="mv-title">Optur</h3>
+      <p class="mv-artist">Kaya &amp; Magda <span class="mono">2:11</span></p>
+      <p>Filmet på en iPhone i Norge. Musikken er lavet med Suno ud fra pigernes egne ord.</p>
+      <dl class="mv-facts">
+        <dt>Tekst</dt><dd>Kaya og Magda</dd>
+        <dt>Musik</dt><dd>Suno, styret af Mikael Espensen</dd>
+        <dt>Video</dt><dd>iPhone, norsk natur</dd>
+        <dt>Visninger</dt><dd>Over 100.000</dd>
+      </dl>
+      <span class="ph-label mv-tag">Lavet med hjælp fra AI</span>
+    </div>
+  </figure>
+
+  <div class="prose">
+    <p>Videoen blev delt på sociale medier, og den fik hurtigt mere end 100.000 visninger. Folk delte den, skrev til familien og spurgte, hvor de kunne høre mere.</p>
+  </div>
+
+  <figure class="quote" id="citat" data-c="Citat · karaoke">
+    <blockquote data-karaoke data-hot="satans">Det var lige godt satans... Det her må vi kunne bruge til noget.</blockquote>
+    <cite><span><strong style="color:var(--ink)">Mikael Espensen</strong> · Kayas far</span></cite>
+  </figure>
+
+  <div class="prose">
+    <p>Og det gjorde vi. Resten af historien handler om, hvordan en eftermiddag i Norge blev til et projekt, hvor flere LykkeLiga-spillere fik deres egen sang. Én regel fulgte med fra start: <strong>Maskinen må hjælpe, men spillerne bestemmer.</strong></p>
+  </div>
+
+  <figure class="triptych wide" id="triptykon" data-c="Triptykon · stående stills">
+    <div class="tri">
+      <img src="https://image.mux.com/VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ/thumbnail.webp?time=31&amp;width=900" alt="Magda løber ned ad en skovsti mellem birketræer. Tekst i billedet: Magda er et lyn." loading="lazy">
+      <img src="https://image.mux.com/VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ/thumbnail.webp?time=55&amp;width=900" alt="Kaya og Magda danser på en grusvej i efterårsskoven. Tekst i billedet: Vi shopper det går helt amok." loading="lazy">
+      <img src="https://image.mux.com/VSpQYni02bTHEgU8e23nJLzpGMnjJmIp5WplodXDhPrQ/thumbnail.webp?time=127&amp;width=900" alt="Kaya og Magda står arm i arm. Tekst i billedet: Vi er Best Friends Forever." loading="lazy">
+    </div>
+    <figcaption><span class="mono">Stills</span> Billeder fra musikvideoen "Optur". Stående video fra en telefon vises bedst side om side.</figcaption>
+  </figure>
+</section>
+
+<!-- SPOR 2 -->
+<section class="paper sand flow" id="spor-2">
+  <div class="chapter-open" data-c="Kapitel-åbner">
+    <span class="track-no">02</span>
+    <div><span class="mono">Spor 2 · 03:10</span><h2 class="h-chapter">Stemmerne fra omklædningsrummet</h2></div>
+    <div class="wave" aria-hidden="true"></div>
+  </div>
+  <div class="prose">
+    <p>Vi inviterede alle, der havde lyst, til en studiedag i klubhuset. Fjorten kom. Nogle havde skrevet tekster i årevis på telefonen. Andre havde aldrig sunget for andre end deres mor.</p>
+    <p>Hver spiller fik en halv time med en producer. Først snakkede de om, hvad sangen skulle handle om. Så indspillede de deres stemme: et omkvæd, et vers, nogle gange bare et grin eller et heppekor.</p>
+  </div>
+  <figure class="quote" data-c="Citat · karaoke">
+    <blockquote data-karaoke data-hot="bilen">Jeg har altid sunget i bilen. Nu er det bilen, der synger mig.</blockquote>
+    <cite><span class="ph" data-tone="portrait" aria-hidden="true"></span><span><strong style="color:var(--ink)">Sara, 27</strong> · venstre back, Aalborg</span></cite>
+  </figure>
+  <div class="prose">
+    <p>Det var her, vi første gang mærkede, hvad projektet kunne. Ikke fordi teknologien var imponerende, men fordi spillerne pludselig hørte sig selv som noget andet end håndboldspillere.</p>
+  </div>
+
+  <article class="case wide" id="case" data-c="Casekort · før/efter">
+    <div class="case-media" id="caseMedia">
+      <div class="ph" data-tone="portrait"><span class="ph-label">Foto · Sara i klubhuset</span></div>
+      <div class="ph after" data-tone="ai"><span class="ph-label r">AI-cover · Sara som popstjerne</span></div>
+      <input type="range" id="caseSlider" min="0" max="100" value="50" aria-label="Sammenlign foto og AI-cover">
+      <span class="handle"></span>
+    </div>
+    <div class="case-body">
+      <span class="eyebrow">Case 01</span>
+      <h4>Fra venstre back til forsanger</h4>
+      <p>Sara skrev teksten om sin første kamp på telefonen i bussen. Producerne brugte AI til at foreslå en melodi og et lydbillede. Coveret er lavet ud fra et rigtigt foto, som Sara selv valgte.</p>
+      <dl>
+        <dt>Genre</dt><dd>Dansk pop, 118 BPM</dd>
+        <dt>Sang</dt><dd>"Første mål"</dd>
+      </dl>
+      <div class="split">
+        <div class="human"><b>Sara gjorde</b>Tekst, stemme, valg af foto, sidste ord</div>
+        <div class="machine"><b>AI gjorde</b>Melodiforslag, akkorder, cover-stil</div>
+      </div>
+    </div>
+  </article>
+
+  <div class="wide" id="filmstrip" data-c="Filmstrimmel · galleri">
+    <div class="strip-head">
+      <h3 class="h-sub" style="margin:0">Studiedagen i billeder</h3>
+      <div class="ctrls"><span class="mono" id="stripCount" style="color:var(--muted)">1 / 6</span><button class="round" data-dir="-1" aria-label="Forrige billede">←</button><button class="round" data-dir="1" aria-label="Næste billede">→</button></div>
+    </div>
+    <div class="strip" id="strip" tabindex="0" aria-label="Galleri, rul vandret">
+      <figure><div class="ph" data-tone="studio"><span class="ph-label">Foto 3:2 · mikrofonen bliver stillet op</span></div><figcaption><span class="mono">01</span>Klubhuset bliver til studie med to højttalere og en mikrofon.</figcaption></figure>
+      <figure class="tall"><div class="ph" data-tone="portrait"><span class="ph-label">Foto 4:5 · portræt</span></div><figcaption><span class="mono">02</span>Første optagelse. Nerver, så grin.</figcaption></figure>
+      <figure><div class="ph" data-tone="hall"><span class="ph-label">Foto 3:2 · heppekor</span></div><figcaption><span class="mono">03</span>Hele holdet indspiller heppekoret til sang nummer fire.</figcaption></figure>
+      <figure><div class="ph" data-tone="studio"><span class="ph-label">Foto 3:2 · producer og spiller</span></div><figcaption><span class="mono">04</span>Producer og spiller lytter til tre AI-forslag og vælger ét.</figcaption></figure>
+      <figure class="tall"><div class="ph" data-tone="ai"><span class="ph-label">Foto 4:5 · cover-prøve</span></div><figcaption><span class="mono">05</span>De første cover-prøver bliver vist på storskærm.</figcaption></figure>
+      <figure><div class="ph" data-tone="scene"><span class="ph-label">Foto 3:2 · afslutning</span></div><figcaption><span class="mono">06</span>Dagen slutter med første gennemlytning for alle.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- SPOR 3 -->
+<section class="stage flow" id="spor-3">
+  <div class="chapter-open" data-c="Kapitel-åbner">
+    <span class="track-no">03</span>
+    <div><span class="mono">Spor 3 · 03:30</span><h2 class="h-chapter">Inde i maskinen</h2></div>
+    <div class="wave" aria-hidden="true"></div>
+  </div>
+  <div class="prose">
+    <p class="drop">Hvad sker der egentlig, når en stemme fra et klubhus bliver til en færdig sang? Vi brugte fire trin, og AI var kun med i nogle af dem. Rul gennem trinene herunder.</p>
+  </div>
+  <div class="scrolly wide" id="scrolly" data-c="Scrollytelling · sticky">
+    <div class="scrolly-fig" id="scrollyFig" data-step="0">
+      <canvas id="scrollyCanvas" aria-hidden="true"></canvas>
+      <div class="layer" data-l="0"><span class="mono">● Rec · 00:42</span></div>
+      <div class="layer" data-l="1"><p class="lyric">Jeg løb ind på banen<br><s>og alle så på mig</s><br><em>og hele hallen sang</em><br>mit navn for første gang</p><span class="mono">Tekst · Saras egne ord, tredje udkast</span></div>
+      <div class="layer" data-l="2"><span class="mono">Model · 3 forslag genereret · 0:38 hver</span></div>
+      <div class="layer" data-l="3"><div class="cover-card"><span class="mono" style="color:#0f2440">Lykkeliga EP · 2026</span><b>Første<br>mål</b></div></div>
+    </div>
+    <div class="steps">
+      <div class="step" data-step="0"><span class="mono">Trin 1 · menneske</span><h4>Stemmen bliver optaget</h4><p>Spilleren synger eller taler sin tekst ind. Rå, med baggrundsstøj og grin. Optagelsen tilhører spilleren.</p></div>
+      <div class="step" data-step="1"><span class="mono">Trin 2 · menneske + AI</span><h4>Teksten bliver skrevet færdig</h4><p>Spilleren skriver teksten. En sprogmodel kan foreslå rim, men spilleren streger ud og vælger selv. Ordene er deres.</p></div>
+      <div class="step" data-step="2"><span class="mono">Trin 3 · AI</span><h4>Musikken bliver genereret</h4><p>Ud fra en <button class="term" data-term="prompt" aria-expanded="false">prompt</button> laver en musikmodel tre forslag til melodi og lydbillede. Produceren og spilleren lytter og vælger.</p></div>
+      <div class="step" data-step="3"><span class="mono">Trin 4 · menneske</span><h4>Mix, master og cover</h4><p>Produceren lægger den rigtige stemme ind, mixer og mastrer. Coveret bliver lavet ud fra et foto, spilleren selv har valgt.</p></div>
+    </div>
+  </div>
+
+  <div class="mixer wide" id="mixer" data-c="Interaktiv · prompt-mixer">
+    <h3>Prøv selv: byg en prompt <span class="mono">Interaktivt modul</span></h3>
+    <div class="controls">
+      <div class="ctl"><span class="lbl">Genre</span><div class="chips" id="genre" role="group" aria-label="Genre"></div></div>
+      <div class="ctl"><label for="bpm">Tempo <output id="bpmOut">118 BPM</output></label><input class="fader" type="range" id="bpm" min="70" max="160" value="118"></div>
+      <div class="ctl"><label for="energy">Energi <output id="energyOut">Høj</output></label><input class="fader" type="range" id="energy" min="0" max="100" value="70"></div>
+      <div class="ctl"><span class="lbl">Sangen handler om</span><div class="chips" id="theme" role="group" aria-label="Tema"></div></div>
+    </div>
+    <div class="out">
+      <div class="viz"><canvas id="mixCanvas" aria-hidden="true"></canvas></div>
+      <p class="prompt" id="promptText" aria-live="polite"></p>
+      <button class="btn coral" id="playSketch" aria-pressed="false"><span class="ico"></span><span>Hør en skitse</span></button>
+      <p class="small">Skitsen er en simpel synth-loop lavet i browseren, ikke AI. Den viser, hvordan tempo og energi ændrer udtrykket.</p>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>Det vigtigste, vi lærte i maskinrummet: <strong>De bedste resultater kom, når spillerne sad med ved skærmen.</strong> Når produceren genererede alene, blev sangene glatte. Når spilleren sagde "nej, den lyder ikke som mig", blev de bedre.</p>
+  </div>
+</section>
+
+<!-- SPOR 4 -->
+<section class="paper flow" id="spor-4">
+  <div class="chapter-open" data-c="Kapitel-åbner">
+    <span class="track-no">04</span>
+    <div><span class="mono">Spor 4 · 01:40</span><h2 class="h-chapter">Aftenen hvor hallen blev en scene</h2></div>
+    <div class="wave" aria-hidden="true"></div>
+  </div>
+  <div class="prose">
+    <p>Sangene fik premiere ved sæsonafslutningen. Hallen var pyntet med lys, og hver sang blev spillet, mens spilleren stod på scenen. Nogle sang med. Én dansede så meget, at mikrofonen faldt af.</p>
+  </div>
+
+  <figure class="video wide" id="video" data-c="Videomodul · kapitler + undertekster">
+    <div class="screen">
+      <canvas id="videoCanvas" aria-hidden="true"></canvas>
+      <span class="ph-label" style="z-index:3;top:12px;bottom:auto">Video 16:9 · 2:00 · releasefesten</span>
+      <button class="big-play" id="bigPlay" aria-label="Afspil video"></button>
+      <p class="sub" id="vsub"></p>
+    </div>
+    <div class="vbar">
+      <button id="vPlay" aria-pressed="false">Afspil</button>
+      <div class="vtrack" id="vtrack" role="slider" aria-label="Spol i video" aria-valuemin="0" aria-valuemax="120" aria-valuenow="0" tabindex="0"><i></i></div>
+      <span class="vtime" id="vtime">0:00 / 2:00</span>
+      <button id="vCC" aria-pressed="true">Undertekster</button>
+    </div>
+    <div class="vchap" id="vchap"></div>
+  </figure>
+
+  <div class="case-row wide" id="case-raekke" data-c="Case-række · korte cases">
+    <article class="case-mini"><div class="ph" data-tone="scene"><span class="ph-label">Foto 3:2</span></div><span class="eyebrow">Case 02</span><h5>Heppekoret, der blev et omkvæd</h5><p>Hele holdets heppekor blev samplet og lagt ind som omkvæd. AI foreslog takten, holdet råbte resten.</p></article>
+    <article class="case-mini"><div class="ph" data-tone="studio"><span class="ph-label">Foto 3:2</span></div><span class="eyebrow">Case 03</span><h5>Rap om bussen til LykkeCup</h5><p>Mikkel ville ikke synge. Han ville rappe. Modellen kunne ikke ramme hans flow, så produceren byggede beatet i hånden.</p></article>
+    <article class="case-mini"><div class="ph" data-tone="hall"><span class="ph-label">Foto 3:2</span></div><span class="eyebrow">Case 04</span><h5>Sangen, vi ikke udgav</h5><p>Én sang endte i skuffen. Spilleren kunne ikke genkende sig selv i den, og så var svaret nej. Det var reglen.</p></article>
+  </div>
+
+  <aside class="method" id="metode" data-c="Metodeboks">
+    <h4>Sådan brugte vi AI ansvarligt</h4>
+    <ul>
+      <li>Alle spillere og deres pårørende gav samtykke, før vi optog. Man kunne trække sig når som helst.</li>
+      <li>Stemmer blev aldrig klonet eller genereret. Alle vokaler på sangene er spillernes egne.</li>
+      <li>Alle sange og covers er mærket "lavet med hjælp fra AI".</li>
+      <li>Spillerne ejer deres tekster og optagelser. Ingen data blev brugt til at træne modeller.</li>
+    </ul>
+  </aside>
+
+  <div class="credits wide" data-c="Liner notes · credits">
+    <div><h5>Tekst</h5><p>Lykkeliga-redaktionen</p></div>
+    <div><h5>Foto og video</h5><p>[Fotografens navn]</p></div>
+    <div><h5>Musik</h5><p>14 Lykkeliga-spillere, 2 producere</p></div>
+    <div><h5>Værktøjer</h5><p>Sprogmodel til rimforslag, musikmodel til melodiforslag, billedmodel til covers</p></div>
+  </div>
+  <div class="endmark wide"><svg viewBox="0 0 202.317 74.927" fill="currentColor" role="img" aria-label="Lykkeliga"><g transform="translate(101.159 37.464)"><g transform="translate(-101.159 -37.464)"><g><path d="M30.733,41.252a9.352,9.352,0,0,0,1.1-2.237,5.239,5.239,0,0,0,.324-1.751q-.034-.647-.486-.713t-1.361.842a3.733,3.733,0,0,1-2.723.843,30,30,0,0,1-4.312-.357q-2.432-.356-5.187-.842a43.293,43.293,0,0,0-5.349-.616q2.268-3.307,4.992-7.716T23.018,19.6q2.561-4.7,4.668-9.24a58.466,58.466,0,0,0,3.145-8.1,1.426,1.426,0,0,0-.26-1.459A2.6,2.6,0,0,0,29.047.08a8.036,8.036,0,0,0-2.269,0,9.877,9.877,0,0,0-2.464.649,8.654,8.654,0,0,0-2.172,1.265,3.792,3.792,0,0,0-1.3,1.75q-1.167,3.438-2.561,7.035T15.4,17.846q-1.492,3.47-3.047,6.646T9.337,30.23a43.406,43.406,0,0,1-2.756,4.312,10.258,10.258,0,0,1-2.269,2.4A7.136,7.136,0,0,0,1.491,38.5,4.787,4.787,0,0,0,.162,40.571a3.6,3.6,0,0,0,0,2.14,3.913,3.913,0,0,0,1.1,1.75,4.181,4.181,0,0,0,2.01.973A5.082,5.082,0,0,0,6,45.175a4.888,4.888,0,0,0,1.653-1,11.847,11.847,0,0,0,1.394-1.524,10.015,10.015,0,0,1,4.376.065q2.3.519,4.539,1.167t4.344,1.1a7.729,7.729,0,0,0,3.858-.065,8.144,8.144,0,0,0,2.659-1.524A10.3,10.3,0,0,0,30.733,41.252Z" transform="translate(0 0)" ></path><path d="M156.391,48.412a15.589,15.589,0,0,1-4.377,2.172,14.234,14.234,0,0,1-4.117.681,7.086,7.086,0,0,1-3.274-.713,3.55,3.55,0,0,1-1.848-2.01,15.172,15.172,0,0,0,6.321-1.167,15.677,15.677,0,0,0,4.8-3.079,10.62,10.62,0,0,0,2.691-3.988,5.529,5.529,0,0,0,.13-3.89A4.607,4.607,0,0,0,154.8,34.18a7.091,7.091,0,0,0-3.08-.973,12.936,12.936,0,0,0-3.793.259,13.227,13.227,0,0,0-3.987,1.556,16.992,16.992,0,0,0-3.663,2.918,14.718,14.718,0,0,0-2.82,4.247,13.875,13.875,0,0,0-1.264,4.96,10.443,10.443,0,0,0,.026,1.3l-.058.032a9.406,9.406,0,0,1-2.982,1.037,9.614,9.614,0,0,1-2.2.195,2.8,2.8,0,0,1-1.653-1.1,21.169,21.169,0,0,1-1.524-2.075,26.129,26.129,0,0,1-1.491-2.918q2.658-1.491,5.446-3.144a52.169,52.169,0,0,1,5.252-2.756.722.722,0,0,0,.357-1.135,3.97,3.97,0,0,0-1.427-1.362,6.538,6.538,0,0,0-2.3-.843,3.421,3.421,0,0,0-2.334.357,15.534,15.534,0,0,0-1.686,1.1q-.972.714-2.042,1.524T125.4,39.075q-1.1.908-2.009,1.75,1.426-3.047,2.885-6.094t2.691-5.576q1.23-2.529,2.042-4.215t.941-2.01q.259-.519-.486-.811a5.476,5.476,0,0,0-1.815-.324,6.969,6.969,0,0,0-2.108.259,2.023,2.023,0,0,0-1.361.94q-.26.455-1.265,2.432t-2.431,4.863q-1.428,2.886-3.08,6.257t-3.144,6.646c-.855,1.877-1.617,3.627-2.3,5.264l-.038.02a9.408,9.408,0,0,1-2.982,1.037,9.611,9.611,0,0,1-2.2.195,2.8,2.8,0,0,1-1.653-1.1,21.1,21.1,0,0,1-1.524-2.075,25.983,25.983,0,0,1-1.491-2.918q2.657-1.491,5.446-3.144a52.122,52.122,0,0,1,5.252-2.756.722.722,0,0,0,.357-1.135,3.973,3.973,0,0,0-1.427-1.362,6.538,6.538,0,0,0-2.3-.843,3.421,3.421,0,0,0-2.334.357,15.534,15.534,0,0,0-1.686,1.1q-.973.714-2.042,1.524t-2.172,1.718q-1.1.908-2.01,1.75,1.425-3.047,2.885-6.094t2.691-5.576q1.232-2.529,2.042-4.215t.941-2.01q.258-.519-.487-.811a5.472,5.472,0,0,0-1.815-.324,6.971,6.971,0,0,0-2.107.259,2.021,2.021,0,0,0-1.361.94q-.26.455-1.265,2.432t-2.431,4.863q-1.427,2.886-3.08,6.257t-3.145,6.646c-.855,1.875-1.616,3.624-2.293,5.26l-.04.024a22.96,22.96,0,0,1-3.7,1.88,11.263,11.263,0,0,1-2.723.649q1.037-2.529,1.945-5.252a21.567,21.567,0,0,1,1.1-2.626q.713-1.459,1.524-3.015t1.718-3.08q.908-1.523,1.751-2.756c.216-.3.107-.551-.324-.745A4.139,4.139,0,0,0,91.3,33.24a9.39,9.39,0,0,0-2.139.259,3.347,3.347,0,0,0-1.621.778,9.4,9.4,0,0,0-1.07,1.459q-.681,1.07-1.491,2.5t-1.621,2.95q-.812,1.524-1.394,2.756a15.925,15.925,0,0,1-2.788,3.047,9.119,9.119,0,0,1-2.594,1.621,1.387,1.387,0,0,1-1.654-.259q-.551-.647-.032-2.594a15.69,15.69,0,0,1,.908-2.5q.647-1.459,1.491-3.048t1.75-3.144q.908-1.557,1.751-2.788c.259-.3.162-.551-.292-.745a4.379,4.379,0,0,0-1.718-.292,9.387,9.387,0,0,0-2.139.259,3.345,3.345,0,0,0-1.621.778A19.084,19.084,0,0,0,73.855,35.9q-.778,1.166-1.588,2.658T70.646,41.6a27.68,27.68,0,0,0-1.264,2.723,15.535,15.535,0,0,0-1.07,4.441,5.1,5.1,0,0,0,.746,3.4,11.636,11.636,0,0,0-4.993,3.63,7.271,7.271,0,0,0-1.621,4.279A4.546,4.546,0,0,0,64.1,63.616a6.983,6.983,0,0,0,4.765,1.459,14.223,14.223,0,0,0,8.85-2.918,17.355,17.355,0,0,0,3.209-3.21,26.774,26.774,0,0,0,2.594-4.117,10.361,10.361,0,0,0,2.95-.746,15.246,15.246,0,0,0,3.339-1.977c.258-.21.5-.419.724-.629-.312.85-.555,1.581-.725,2.186q-.129.519.681.811a6.077,6.077,0,0,0,1.88.324,7.327,7.327,0,0,0,2.075-.227,1.49,1.49,0,0,0,1.2-.908q.324-1.1,1.2-3.274t2.107-4.9a27.784,27.784,0,0,0,.908,2.658,19.281,19.281,0,0,0,1.394,2.853,13.807,13.807,0,0,0,1.783,2.4,3.773,3.773,0,0,0,2.139,1.232,6.007,6.007,0,0,0,3.08-.292,13.527,13.527,0,0,0,2.852-1.427,14.493,14.493,0,0,0,1.576-1.2q-.406,1.123-.637,1.946-.129.519.681.811a6.075,6.075,0,0,0,1.88.324,7.327,7.327,0,0,0,2.075-.227,1.49,1.49,0,0,0,1.2-.908q.324-1.1,1.2-3.274t2.107-4.9a27.779,27.779,0,0,0,.908,2.658,19.291,19.291,0,0,0,1.394,2.853,13.807,13.807,0,0,0,1.783,2.4,3.774,3.774,0,0,0,2.14,1.232,6,6,0,0,0,3.079-.292,13.534,13.534,0,0,0,2.853-1.427,13.832,13.832,0,0,0,2.334-1.912c.322-.332.6-.64.835-.927a7.53,7.53,0,0,0,.428,1.154,6.931,6.931,0,0,0,2.626,2.918,10.379,10.379,0,0,0,4.312,1.459,11.408,11.408,0,0,0,4.636-.292,17.087,17.087,0,0,0,3.955-1.653,14.68,14.68,0,0,0,3.015-2.269,17.89,17.89,0,0,0,1.24-1.363,8.788,8.788,0,0,1-.224-1.686C156.463,48.367,156.429,48.387,156.391,48.412Zm-11.347-7a12.522,12.522,0,0,1,2.561-2.2,7.99,7.99,0,0,1,2.5-1.1,1.755,1.755,0,0,1,1.686.259,1.259,1.259,0,0,1,.064,1.589,6.182,6.182,0,0,1-1.783,1.977,13.308,13.308,0,0,1-3.08,1.718,11.06,11.06,0,0,1-3.89.811A10.768,10.768,0,0,1,145.044,41.409ZM73.4,58.234a4.949,4.949,0,0,1-3.631.94q-1.362-.194-1.556-.875a1.523,1.523,0,0,1,.551-1.459A7.486,7.486,0,0,1,71.1,55.349a11.665,11.665,0,0,1,3.729-.908,14.814,14.814,0,0,1,1.945,0A13.922,13.922,0,0,1,73.4,58.234Z" transform="translate(-34.727 -12.12)" ></path></g><g transform="translate(49.262 8.159)"><path d="M331.4,34.83a4.241,4.241,0,0,0,2.2-.616,6.467,6.467,0,0,0,1.783-1.556,7.7,7.7,0,0,0,1.167-2.042,4.826,4.826,0,0,0,.356-2.043,2.635,2.635,0,0,0-.584-1.556,2.091,2.091,0,0,0-1.686-.616,4.124,4.124,0,0,0-3.047,1.329,8.3,8.3,0,0,0-1.88,2.885,4.84,4.84,0,0,0-.259,2.885A1.74,1.74,0,0,0,331.4,34.83Z" transform="translate(-232.415 -22.841)" ></path><path d="M260.333,46.579l0,.008q-2.906,1.74-4.1.868t-.227-3.6a25.02,25.02,0,0,1,1.07-2.626q.681-1.459,1.524-3.015t1.718-3.08q.876-1.523,1.718-2.756c.26-.3.162-.551-.292-.745a4.376,4.376,0,0,0-1.718-.292,9.381,9.381,0,0,0-2.139.259,3.349,3.349,0,0,0-1.621.778,5.1,5.1,0,0,0-.842,1.1l-.584-.908a4.712,4.712,0,0,0-2.69-1.589,8.026,8.026,0,0,0-3.566.1,13.965,13.965,0,0,0-3.955,1.686,19.475,19.475,0,0,0-3.923,3.177,20.981,20.981,0,0,0-3.145,4.15,17.835,17.835,0,0,0-1.815,4.279,11.939,11.939,0,0,0-.372,2.174c-.018.012-.032.018-.05.03q-1.881,1.166-3.274,1.848a15.147,15.147,0,0,1-2.562,1q.518-1.361,1.038-2.755t1.037-2.82a25.021,25.021,0,0,1,1.07-2.626q.681-1.459,1.491-3.015t1.685-3.08q.876-1.523,1.718-2.756c.259-.3.162-.551-.292-.745a4.378,4.378,0,0,0-1.718-.292,9.386,9.386,0,0,0-2.139.259,3.349,3.349,0,0,0-1.621.778,4.6,4.6,0,0,1-.356.454,6.112,6.112,0,0,0-.487.648,2.419,2.419,0,0,0-.292-.454,2.315,2.315,0,0,1-.292-.454,4.7,4.7,0,0,0-2.659-1.589,7.889,7.889,0,0,0-3.534.1,13.97,13.97,0,0,0-3.955,1.686,19.5,19.5,0,0,0-3.923,3.177,21,21,0,0,0-3.145,4.15,17.852,17.852,0,0,0-1.815,4.279,12.1,12.1,0,0,0-.365,2.029c-.1.049-.2.107-.315.175q-2.918,1.75-4.117.875t-.227-3.6q.907-2.334,2.172-4.96a38.872,38.872,0,0,1,2.95-5.089q.389-.518-.292-.778a4.892,4.892,0,0,0-1.718-.259,10.622,10.622,0,0,0-2.139.227,3.157,3.157,0,0,0-1.621.746,9.46,9.46,0,0,0-1.135,1.523q-.681,1.071-1.394,2.432t-1.394,2.82q-.681,1.459-1.135,2.626a29.786,29.786,0,0,0-1.2,3.372l0,.016c-.032.018-.06.03-.093.049a15.33,15.33,0,0,1-3.177,1.3,7.117,7.117,0,0,1-2.95.259A3.5,3.5,0,0,1,190.969,47a4.332,4.332,0,0,1-.842-2.95q2.529-2.14,5.058-4.668t4.733-5.122a49.8,49.8,0,0,0,3.825-5.09,21.051,21.051,0,0,0,2.334-4.6,6.309,6.309,0,0,0,.292-3.663A3.426,3.426,0,0,0,204,18.634a5.691,5.691,0,0,0-4.571.584,19.174,19.174,0,0,0-4.96,3.891,41.175,41.175,0,0,0-4.7,6.062,47.955,47.955,0,0,0-3.793,7.1,34.524,34.524,0,0,0-2.2,6.937,13.888,13.888,0,0,0-.281,3.24,8.779,8.779,0,0,0,.224,1.686c.054.223.114.44.186.649a6.811,6.811,0,0,0,6.549,4.863,9.079,9.079,0,0,0,4.9-1.394,15.731,15.731,0,0,0,3.566-2.918l.059-.07c0,.109,0,.222.006.329a3.591,3.591,0,0,0,.907,2.269,3.531,3.531,0,0,0,2.691.875,8.167,8.167,0,0,0,4.376-1.264,16.616,16.616,0,0,0,3.307-2.594c.258-.271.479-.526.67-.77.005.062,0,.125.01.186a5.553,5.553,0,0,0,1.232,3.08.387.387,0,0,0,.259.259,11.128,11.128,0,0,0-4.993,3.631,6.521,6.521,0,0,0-1.393,4.279,5.059,5.059,0,0,0,1.945,3.567,7.731,7.731,0,0,0,5.09,1.491,13.734,13.734,0,0,0,4.83-.94,14.7,14.7,0,0,0,3.955-2.366,18.913,18.913,0,0,0,3.242-3.534,32.635,32.635,0,0,0,2.626-4.377,13.6,13.6,0,0,0,3.08-1.1,19.473,19.473,0,0,0,3.274-2.075,9.94,9.94,0,0,0,1.389-1.352,5.6,5.6,0,0,0,1.075,2.519,4.462,4.462,0,0,0,2.269,1.491,7.524,7.524,0,0,0,2.983.195,11.079,11.079,0,0,0,3.4-1.038,18.96,18.96,0,0,0,3.534-2.2,3.338,3.338,0,0,0,.94,2.107,3.6,3.6,0,0,0,2.626.811,7.669,7.669,0,0,0,3.015-.616,13.29,13.29,0,0,0,2.626-1.459q.576-.415,1.072-.855c-.1,14.468-30.828,27.43-66.691,11.963-25.455-10.978-61.939-3.262-68.419.07-3.668,1.886-5.216,3.218-7.139,6.436-2.332,3.9-5.788,10.485-5.788,14.1,0,4.438,5.376,2.392,6.849,1.694C123.585,81.341,142.66,71.6,156.607,70.5c31.437-2.483,58.869,12.725,84.308,7.743C265.238,73.478,267.8,42.406,260.333,46.579ZM192.266,36.4a51.489,51.489,0,0,1,3.5-6.711,35.479,35.479,0,0,1,3.275-4.474,12.391,12.391,0,0,1,2.658-2.4q1.135-.68,1.589-.422.583.325-.356,2.237a33.51,33.51,0,0,1-2.853,4.571q-1.914,2.659-4.377,5.608t-4.863,5.349A29.631,29.631,0,0,1,192.266,36.4Zm24.9,21.3a5.528,5.528,0,0,1-4.085.94q-1.167-.194-1.362-.875a1.585,1.585,0,0,1,.454-1.459,5.988,5.988,0,0,1,2.172-1.459,12.941,12.941,0,0,1,3.793-.94q.647-.065,1.264-.1c.411-.023.832-.033,1.265-.033A13.515,13.515,0,0,1,217.162,57.7Zm9.888-18.024a31.272,31.272,0,0,1-2.366,4.053,8.524,8.524,0,0,1-1.815,1.977,6.84,6.84,0,0,1-1.913,1.07,4.1,4.1,0,0,1-1.686.259,1.6,1.6,0,0,1-1.134-.518,3.328,3.328,0,0,1-.195-2.885,12.259,12.259,0,0,1,4.409-5.965,8.935,8.935,0,0,1,2.042-1.07,3.721,3.721,0,0,1,1.686-.227,1.727,1.727,0,0,1,1.135.551Q227.925,37.827,227.05,39.674Zm24.476,0a28.389,28.389,0,0,1-2.334,4.053,8.16,8.16,0,0,1-1.848,1.977,7.489,7.489,0,0,1-1.912,1.07,3.912,3.912,0,0,1-1.653.259,1.6,1.6,0,0,1-1.135-.518,3.329,3.329,0,0,1-.195-2.885,10.675,10.675,0,0,1,2.27-3.987,11.1,11.1,0,0,1,2.107-1.978,8.159,8.159,0,0,1,2.042-1.07,3.793,3.793,0,0,1,1.686-.227,1.693,1.693,0,0,1,1.1.551Q252.369,37.827,251.526,39.674Z" transform="translate(-110.981 -18.382)" ></path></g></g></g></svg><span class="mono" style="color:var(--muted)">Slut på side B · tak fordi du lyttede med</span></div>
+</section>
+</main>
+
+<script>
+/* Artiklens indhold til komponenterne. Komponent-koden ligger i /assets/lykke.js */
+window.LYKKE = {
+  terms: {
+    genai: ['Ordforklaring','Generativ AI er programmer, der skaber ny tekst, lyd eller billeder ud fra mønstre, de har lært. De forstår ikke musik, men de er gode til at gætte, hvad der lyder rigtigt.'],
+    prompt: ['Ordforklaring','En prompt er den beskrivelse, man giver en AI-model. For eksempel: "glad dansk pop, 118 BPM, om første mål". Jo mere præcis, jo tættere på det, man forestiller sig.']
+  },
+  mixer: {
+    genres: [{id:'pop',l:'Dansk pop',scale:[0,4,7,9,12],swing:0},{id:'rap',l:'Rap',scale:[0,3,5,7,10],swing:.12},{id:'rock',l:'Rock',scale:[0,5,7,10,12],swing:0},{id:'disco',l:'Disco',scale:[0,4,7,11,14],swing:0}],
+    themes: ['første mål','holdkammerater','bussen til LykkeCup','at vinde uden at vinde']
+  },
+  video: {
+    dur: 120,
+    chapters: [[0,'Hallen bliver pyntet'],[42,'Første sang på scenen'],[78,'Hele holdet synger med'],[104,'Efter festen']],
+    subs: [[3,9,'Vi har aldrig prøvet noget lignende.'],[14,22,'Jeg var så nervøs, at jeg glemte første linje.'],[44,52,'[musik: "Første mål"]'],[60,68,'Det er MIG, der synger!'],[80,90,'[publikum synger med]'],[106,114,'Næste år laver vi et album.']]
+  }
+};
+</script>
+</body>
+</html>
