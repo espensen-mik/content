@@ -5,3 +5,6 @@ node_modules
 
 # Originale fotos; de weboptimerede ligger i img/
 longreads/*/images/
+
+# Kildefil til app-mockup; siden bruger JPG-versionerne
+longreads/musikstjerner/img/app_mockup.png

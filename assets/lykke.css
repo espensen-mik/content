@@ -630,3 +630,13 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 
 /* ---- Scrollytelling: rigtigt cover ---- */
 .scrolly-fig .cover-img{width:58%;aspect-ratio:1;object-fit:cover;display:block;margin:auto auto 16px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+
+/* ---- Produktbillede: webappen ---- */
+.appshot{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:clamp(8px,3vw,40px);margin-block:var(--s6);padding:clamp(8px,2vw,24px) clamp(20px,4vw,56px) clamp(8px,2vw,24px) 0;background:linear-gradient(180deg,#030b16 0%,#041218 55%,#0a1b21 100%);color:var(--on-stage);overflow:hidden}
+.appshot img{width:100%;height:auto;display:block;-webkit-mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 72% 72% at 50% 50%,#000 62%,transparent 100%)}
+.appshot figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s3);padding-block:var(--s4)}
+.appshot .eyebrow{color:#7ee08a}
+.appshot p{margin:0;font-family:var(--f-display);font-variation-settings:"wdth" 88;font-weight:800;font-size:clamp(24px,2.8vw,38px);line-height:1.12;text-wrap:balance}
+.appshot .btn{margin-top:var(--s2);text-decoration:none}
+@media (max-width:820px){.appshot{grid-template-columns:1fr;padding:0 var(--s4) var(--s4)}.appshot figcaption{padding-top:0}}
+.appshot figcaption,.appshot figcaption p{color:var(--on-stage)}
