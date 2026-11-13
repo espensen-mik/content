@@ -29,6 +29,7 @@ const COMPS = [
  ['Filmstrimmel','media','Vandret galleri med blandede formater og tæller.',['3–8 billeder','Mix af 3:2 og 4:5','Kan styres med pile og tastatur'],'filmstrip'],
  ['Scrollytelling','play','Fast figur, der skifter, mens tekst-trin ruller forbi. Til processer med 3–5 trin.',['Hvert trin kan læses alene','Figur står øverst på mobil','Trin mærket menneske eller AI'],'scrolly'],
  ['Prompt-mixer','play','Læseren skruer på genre, tempo og energi og ser prompten blive bygget. Lyd kun ved klik.',['Forklarer et begreb, ikke pynt','Tydeligt hvad der er AI, og hvad der ikke er','Ét interaktivt modul pr. kapitel'],'mixer'],
+ ['Albumafspiller','play','Alle projektets sange som en plade: cover med vinyl, der glider ud og drejer, farvetone fra coveret og en nummerliste.',['Starter kun ved klik','Næste sang spiller automatisk','Virker med låseskærm og tastatur'],'albummet'],
  ['Videomodul','media','Fortællevideo med kapitler, spolelinje og undertekster slået til.',['Starter kun ved klik','Kapitler under videoen','Undertekster som standard'],'video'],
  ['Metodeboks','read','Forklarer åbent, hvordan AI er brugt, og hvordan spillerne er beskyttet.',['Obligatorisk i artikler om AI','Samtykke, rettigheder, mærkning','Placeres før credits'],'metode'],
  ['Liner notes','read','Credits i albumstil med medvirkende og værktøjer.',['Altid sidst','Nævn værktøjstyper','Fotografer krediteres'],'spor-4']

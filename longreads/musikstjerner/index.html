@@ -226,6 +226,36 @@
     <p>Sangene fik premiere ved sæsonafslutningen. Hallen var pyntet med lys, og hver sang blev spillet, mens spilleren stod på scenen. Nogle sang med. Én dansede så meget, at mikrofonen faldt af.</p>
   </div>
 
+  <figure class="album wide" id="albummet" data-c="Albumafspiller · alle sange" aria-label="Albumafspiller med alle sange fra projektet">
+    <div class="al-wash" aria-hidden="true"><img alt=""><img alt=""></div>
+    <div class="al-deck">
+      <div class="al-sleeve">
+        <div class="al-disc" aria-hidden="true"><div class="al-label"><img alt=""></div></div>
+        <img class="al-cover" alt="">
+      </div>
+      <div class="al-now">
+        <span class="eyebrow">Hele pladen · <span class="al-count">13</span> numre</span>
+        <p class="al-idx">Nr. 01</p>
+        <h3 class="al-title" aria-live="polite">Hop hop hop</h3>
+        <p class="al-artist">TMS Ringsted</p>
+        <div class="al-eq" aria-hidden="true"></div>
+        <div class="al-seek">
+          <span class="mono al-cur">0:00</span>
+          <input class="al-range" type="range" min="0" max="1000" value="0" step="1" aria-label="Spol i sangen">
+          <span class="mono al-dur">–:––</span>
+        </div>
+        <div class="al-ctrl">
+          <button class="round al-prev" aria-label="Forrige sang"><svg viewBox="0 0 16 16"><path d="M3 2h2v12H3zM14 2v12L6 8z"/></svg></button>
+          <button class="al-play" aria-label="Afspil" aria-pressed="false"><svg class="i-play" viewBox="0 0 24 24"><path d="M7 4l14 8-14 8z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+          <button class="round al-next" aria-label="Næste sang"><svg viewBox="0 0 16 16"><path d="M11 2h2v12h-2zM2 2v12l8-6z"/></svg></button>
+        </div>
+        <p class="al-status" role="status"></p>
+      </div>
+    </div>
+    <ol class="al-list" aria-label="Numre"></ol>
+    <figcaption><span class="mono">Pladen</span>Alle sange fra projektet, skrevet sammen med holdene og lavet med hjælp fra AI. Covers er lavet til hver sang. Hør dem også på <a href="https://musik.lykkeliga.dk">musik.lykkeliga.dk</a>.</figcaption>
+  </figure>
+
   <figure class="video wide" id="video" data-c="Videomodul · kapitler + undertekster">
     <div class="screen">
       <canvas id="videoCanvas" aria-hidden="true"></canvas>
@@ -279,6 +309,21 @@ window.LYKKE = {
     genres: [{id:'pop',l:'Dansk pop',scale:[0,4,7,9,12],swing:0},{id:'rap',l:'Rap',scale:[0,3,5,7,10],swing:.12},{id:'rock',l:'Rock',scale:[0,5,7,10,12],swing:0},{id:'disco',l:'Disco',scale:[0,4,7,11,14],swing:0}],
     themes: ['første mål','holdkammerater','bussen til LykkeCup','at vinde uden at vinde']
   },
+  album: [
+    {title:'Hop hop hop', artist:'TMS Ringsted', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Hop-hop-hop.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Hophophop.jpg'},
+    {title:'Nede med at svede', artist:'TMS Ringsted', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Nede-med-at-svede.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Nedemedatsvede.jpg'},
+    {title:'Sammen med Lars er vi superstars', artist:'Ravnsborg Vikings', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Sammen-med-Lars-er-vi-superstars.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Sammenmedlars.jpg'},
+    {title:'Scoresangen', artist:'Ravnsborg Vikings', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Scoresangen.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Scoresangen.jpg'},
+    {title:'Se mine muller', artist:'Skive FH', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Se-mine-muller.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Se-mine-muller-mp3-image.jpg'},
+    {title:'Vi er Sammenholdet', artist:'Guldgåsen', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Vi-er-Sammenholdet.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Vi-er-Sammenholdet-mp3-image.png'},
+    {title:'Vi vinder LykkeCup', artist:'Guldgåsen', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Vi-vinder-LykkeCup.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/Vi-vinder-LykkeCup-mp3-image.png'},
+    {title:'Vi spiller KlasseBold', artist:'LykkeLiga', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Vi-spiller-KlasseBold.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/klassebold_cover.png'},
+    {title:'Venner viser tænder', artist:'Skive FH', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Venner-viser-taender.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/VENNER-VISER-TAeNDER.png'},
+    {title:'Vi er LykkeLiga', artist:'Gritt Møller', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Gritt-Moeller-Lykkeliga.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/vierlykkeliga.png'},
+    {title:'Tre skridt', artist:'Souvenirs', audio:'https://lykkeliga.dk/wp-content/uploads/2026/03/Tre-Skridt-Mix.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/03/cover_3skridt.jpg'},
+    {title:'Lykken er håndbold', artist:'Kviesø YoungStars', audio:'https://lykkeliga.dk/wp-content/uploads/2026/04/Lykken-er-haandbold.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/04/lykkenerhaandbold.jpg'},
+    {title:'Sårn gør jeg når jeg scorer', artist:'Kviesø YoungStars', audio:'https://lykkeliga.dk/wp-content/uploads/2026/04/Saarn-goer-jeg-naar-jeg-scorer.mp3', cover:'https://lykkeliga.dk/wp-content/uploads/2026/04/saarngoerjeg.jpg'}
+  ],
   video: {
     dur: 120,
     chapters: [[0,'Hallen bliver pyntet'],[42,'Første sang på scenen'],[78,'Hele holdet synger med'],[104,'Efter festen']],

@@ -173,5 +173,73 @@ if ($('#video') && D.video) {
   });
 }
 
+/* ---- albumafspiller ---- */
+const al = $('#albummet');
+if (al && D.album?.length) {
+  const T = D.album, au = new Audio(); au.preload = 'none';
+  const pad = n => String(n).padStart(2, '0');
+  const mmss = s => isFinite(s) ? `${Math.floor(s / 60)}:${pad(Math.floor(s % 60))}` : '–:––';
+  const range = $('.al-range', al), cur = $('.al-cur', al), dur = $('.al-dur', al), status = $('.al-status', al);
+  const playBtn = $('.al-play', al), washes = $$('.al-wash img', al);
+  let i = 0, w = 0, seeking = false;
+
+  $('.al-count', al).textContent = T.length;
+  $('.al-eq', al).innerHTML = Array.from({ length: 28 }, (_, k) => `<i style="--h:${40 + Math.round(Math.abs(Math.sin(k * 1.7)) * 60)}%;animation-duration:${(.45 + (k * 37 % 50) / 100).toFixed(2)}s;animation-delay:-${(k * 13 % 10) / 10}s"></i>`).join('');
+  const list = $('.al-list', al);
+  list.innerHTML = T.map((t, k) => `<li><button data-i="${k}" aria-current="false"><span class="n">${pad(k + 1)}</span><img src="${t.cover}" alt="" loading="lazy" width="44" height="44"><span class="t"><b>${t.title}</b><span>${t.artist}</span></span><span class="d"></span></button></li>`).join('');
+  const rows = $$('button', list);
+
+  function show(k) {
+    const t = T[k];
+    $('.al-idx', al).textContent = `Nr. ${pad(k + 1)}`;
+    $('.al-title', al).textContent = t.title;
+    $('.al-artist', al).textContent = t.artist;
+    const c = $('.al-cover', al); c.src = t.cover; c.alt = `Cover til ${t.title} af ${t.artist}`;
+    $('.al-label img', al).src = t.cover;
+    w = 1 - w; washes[w].src = t.cover; washes[w].classList.add('on'); washes[1 - w].classList.remove('on');
+    rows.forEach((r, n) => r.setAttribute('aria-current', n === k));
+    if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: t.title, artist: t.artist, album: 'LykkeLiga · Hele pladen', artwork: [{ src: t.cover, sizes: '1024x1024' }] });
+  }
+  function load(k, play) {
+    i = (k + T.length) % T.length; status.textContent = '';
+    au.src = T[i].audio; range.value = 0; setV(range); cur.textContent = '0:00'; dur.textContent = '–:––';
+    show(i); if (play) start();
+  }
+  function start() {
+    if (!au.src) au.src = T[i].audio;
+    const p = au.play(); p && p.catch(() => { status.textContent = 'Tryk på afspil for at starte musikken.' });
+  }
+  playBtn.addEventListener('click', () => au.paused ? start() : au.pause());
+  $('.al-prev', al).addEventListener('click', () => au.currentTime > 3 ? (au.currentTime = 0) : load(i - 1, !au.paused));
+  $('.al-next', al).addEventListener('click', () => load(i + 1, !au.paused));
+  rows.forEach(r => r.addEventListener('click', () => { const k = +r.dataset.i; k === i && au.src ? (au.paused ? start() : au.pause()) : load(k, true) }));
+
+  au.addEventListener('play', () => {
+    al.classList.add('playing', 'ready'); playBtn.setAttribute('aria-pressed', 'true'); playBtn.setAttribute('aria-label', 'Pause');
+    $$('mux-player, video').forEach(v => { if (!v.paused && v.id !== 'heroVideo') v.pause() });
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'playing';
+  });
+  au.addEventListener('pause', () => {
+    al.classList.remove('playing'); playBtn.setAttribute('aria-pressed', 'false'); playBtn.setAttribute('aria-label', 'Afspil');
+    if ('mediaSession' in navigator) navigator.mediaSession.playbackState = 'paused';
+  });
+  au.addEventListener('loadedmetadata', () => { dur.textContent = mmss(au.duration); $('.d', rows[i]).textContent = mmss(au.duration) });
+  au.addEventListener('timeupdate', () => { if (seeking || !au.duration) return; range.value = au.currentTime / au.duration * 1000; setV(range); cur.textContent = mmss(au.currentTime) });
+  au.addEventListener('ended', () => i < T.length - 1 ? load(i + 1, true) : load(0, false));
+  au.addEventListener('error', () => { if (au.src) status.textContent = 'Sangen kunne ikke afspilles lige nu. Prøv den næste.' });
+  range.addEventListener('input', () => { seeking = true; setV(range); if (au.duration) cur.textContent = mmss(range.value / 1000 * au.duration) });
+  range.addEventListener('change', () => { if (au.duration) au.currentTime = range.value / 1000 * au.duration; seeking = false });
+  $('#opturVideo')?.addEventListener('play', () => au.pause());
+
+  if ('mediaSession' in navigator) {
+    const ms = navigator.mediaSession;
+    ms.setActionHandler('play', start); ms.setActionHandler('pause', () => au.pause());
+    ms.setActionHandler('previoustrack', () => load(i - 1, true)); ms.setActionHandler('nexttrack', () => load(i + 1, true));
+  }
+  setV(range); show(0);
+  /* pladen glider halvt ud, når afspilleren kommer i syne */
+  new IntersectionObserver(es => es.forEach(e => e.isIntersecting && al.classList.add('ready')), { threshold: .4 }).observe(al);
+}
+
 layoutTicks(); onScroll();
 })();
