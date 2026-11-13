@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=DM+Mono:wght@400;500&amp;display=swap">
-<link rel="stylesheet" href="/assets/lykke.css?v=202611131407">
+<link rel="stylesheet" href="/assets/lykke.css?v=202611131409">
 <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3.14.1" defer></script>
-<script src="/assets/lykke.js?v=202611131407" defer></script>
+<script src="/assets/lykke.js?v=202611131409" defer></script>
 </head>
 <body>
 <header class="bar solo" id="bar">
@@ -81,21 +81,6 @@
   <div class="prose">
     <p class="drop">Helt nye musiktjenester baseret på kunstig intelligens, som SUNO og Udio, gør det muligt at producere musik med simple tekstinput. Du skriver blot en kort <button class="term" data-term="prompt" aria-expanded="false">prompt</button>, som eksempelvis "En ørehængende popsang med et beat, der er godt til at hoppe op og ned", og ud af computeren kommer en færdigproduceret sang, klar til at hoppe til.</p>
     <p>Der sker en enorm udvikling inden for generativ AI i øjeblikket, ikke mindst inden for musik.</p>
-  </div>
-  <div class="mixer wide" id="mixer" data-c="Interaktiv · prompt-mixer">
-    <h3>Prøv selv: byg en prompt <span class="mono">Interaktivt modul</span></h3>
-    <div class="controls">
-      <div class="ctl"><span class="lbl">Genre</span><div class="chips" id="genre" role="group" aria-label="Genre"></div></div>
-      <div class="ctl"><label for="bpm">Tempo <output id="bpmOut">118 BPM</output></label><input class="fader" type="range" id="bpm" min="70" max="160" value="118"></div>
-      <div class="ctl"><label for="energy">Energi <output id="energyOut">Høj</output></label><input class="fader" type="range" id="energy" min="0" max="100" value="70"></div>
-      <div class="ctl"><span class="lbl">Sangen handler om</span><div class="chips" id="theme" role="group" aria-label="Tema"></div></div>
-    </div>
-    <div class="out">
-      <div class="viz"><canvas id="mixCanvas" aria-hidden="true"></canvas></div>
-      <p class="prompt" id="promptText" aria-live="polite"></p>
-      <button class="btn coral" id="playSketch" aria-pressed="false"><span class="ico"></span><span>Hør en skitse</span></button>
-      <p class="small">Skitsen er en simpel synth-loop lavet i browseren, ikke AI. Den viser, hvordan tempo og energi ændrer udtrykket.</p>
-    </div>
   </div>
   <div class="prose">
     <p>Vi ser et stort potentiale for at styrke vores musikpædagogiske indsats med brugen af kunstig intelligens, og vi ønsker at dygtiggøre os inden for teknologien, så vi kan drage varig nytte af de nye redskaber.</p>
@@ -406,11 +391,6 @@ window.LYKKE = {
   terms: {
     genai: ['Ordforklaring','Generativ AI er programmer, der skaber ny tekst, lyd eller billeder ud fra mønstre, de har lært. De forstår ikke musik, men de er gode til at gætte, hvad der lyder rigtigt.'],
     prompt: ['Ordforklaring','En prompt er den korte beskrivelse, man giver en AI-tjeneste. For eksempel: "En ørehængende popsang med et beat, der er godt til at hoppe op og ned."']
-  },
-  mixer: {
-    genres: [{id:'pop',l:'Pop',scale:[0,4,7,9,12],swing:0},{id:'rap',l:'Rap',scale:[0,3,5,7,10],swing:.12},{id:'rock',l:'Heavy metal',scale:[0,5,7,10,12],swing:0},{id:'disco',l:'Disco',scale:[0,4,7,11,14],swing:0}],
-    themes: ['at hoppe','sammenhold','at score','LykkeCup'],
-    prompt: (g, bpm, energy, theme) => `En ørehængende <span class="k">${g.includes(' ') ? g.toLowerCase() + '-sang' : g.toLowerCase() + 'sang'}</span> på dansk, <span class="k">${bpm} BPM</span> og <span class="k">${energy.toLowerCase()}</span> energi, med et beat, der er godt til at hoppe op og ned. Sangen handler om <span class="k">${theme}</span>.`
   },
   teams: [
     {name:'Skive fH Håndbold Kids', club:'Skive fH', city:'Skive', artist:'Skive FH', x:119.8, y:233.8, side:'r'},
