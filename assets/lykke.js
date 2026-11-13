@@ -26,8 +26,8 @@ if (hv) {
 }
 
 /* ---- hero: animeret nøgleord ---- */
-const star = $('#star');
-if (star) star.innerHTML = [...star.textContent].map((c, i) => `<span style="--i:${i}">${c}</span>`).join('');
+/* alle fremhævede ord i overskriften hopper bogstav for bogstav */
+$$('.h-hero .star').forEach(star => { star.innerHTML = [...star.textContent].map((c, i) => `<span style="--i:${i}">${c}</span>`).join('') });
 
 /* ---- kapitel-bølger ---- */
 const waves = $$('.chapter-open .wave');
@@ -54,6 +54,42 @@ function onScroll() {
   }
   waves.forEach(w => { const r = w.getBoundingClientRect(); const q = Math.max(0, Math.min(1, (innerHeight * .9 - r.top) / (innerHeight * .8))); const n = Math.round(q * w.children.length); [...w.children].forEach((c, i) => c.classList.toggle('on', i < n)) });
   kar.forEach(q => { const r = q.getBoundingClientRect(); const pr = Math.max(0, Math.min(1, (innerHeight * .85 - r.top) / (innerHeight * .5))); const s = q.children; const n = Math.round(pr * s.length); [...s].forEach((c, i) => { c.classList.toggle('lit', i < n); c.classList.toggle('hot', i < n && c.hasAttribute('data-hot')) }) });
+  window.Lykke.indexUpdate?.();
+}
+
+/* ---- indeks i topbjælken: spring til et spor ---- */
+const bi = $('#barIndex');
+if (bi && art) {
+  const btn = $('#biBtn', bi), panel = $('#biPanel', bi), list = $('ol', panel);
+  const chapters = $$(':scope > section[id^="spor-"]', art).map((sec, k) => ({
+    sec, id: sec.id,
+    title: $('.h-chapter', sec)?.textContent.trim() || `Spor ${k + 1}`,
+    time: ($('.chapter-open .mono', sec)?.textContent.split('·')[1] || '').trim()
+  }));
+  const pad = n => String(n).padStart(2, '0'), total = pad(chapters.length);
+  $('.bi-head', panel).textContent = `Indhold · ${chapters.length} spor`;
+  list.innerHTML = chapters.map((c, k) => `<li><a href="#${c.id}"><span class="n">${pad(k + 1)}</span><span class="t">${c.title}</span><span class="d">${c.time}</span></a></li>`).join('');
+  const links = $$('a', list);
+  let cur = -2; /* -1 = før første spor (hero og intro) */
+  function setOpen(open) {
+    panel.hidden = !open; btn.setAttribute('aria-expanded', open); bi.classList.toggle('open', open);
+    if (open) (links[Math.max(0, cur)] || links[0]).focus();
+  }
+  btn.addEventListener('click', e => { e.stopPropagation(); setOpen(panel.hidden) });
+  links.forEach(a => a.addEventListener('click', () => setOpen(false)));
+  panel.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('click', () => { if (!panel.hidden) setOpen(false) });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); btn.focus() } });
+  /* knappen viser det spor, man læser i lige nu */
+  window.Lykke.indexUpdate = () => {
+    const line = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--bar-h')) || 56) + 80;
+    let k = -1; chapters.forEach((c, n) => { if (c.sec.getBoundingClientRect().top <= line) k = n });
+    if (k === cur) return; cur = k;
+    const c = chapters[Math.max(0, k)];
+    $('.bi-no', btn).textContent = k < 0 ? `${total} spor` : `${pad(k + 1)}/${total}`;
+    $('.bi-title', btn).textContent = k < 0 ? 'Indhold' : c.title;
+    links.forEach((a, n) => a.toggleAttribute('aria-current', n === k));
+  };
 }
 addEventListener('scroll', onScroll, { passive: true });
 addEventListener('resize', () => { layoutTicks(); onScroll() });

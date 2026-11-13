@@ -16,6 +16,7 @@ function wl() { ws.style.fontVariationSettings = `"wdth" ${wd.value}`; ws.style.
 /* ---- komponenter ---- */
 const COMPS = [
  ['Hero med stående video','media','Åbner artiklen med titel og ingress ved siden af en lydløs, stående Mux-video, der kører i loop. Knappen leder til videoen med lyd.',['Titel i versaler, ét nøgleord animeret','Mux Player uden kontroller, lydløs, i loop','Står under titlen på mobil'],''],
+ ['Indeks','read','Diskret knap i topbjælken, der viser hvilket spor man læser i. Åbner en sporliste med titel og spilletid, så man kan springe direkte til et kapitel.',['Bygges automatisk ud fra kapitlerne','Lukker med Esc eller klik udenfor','Kun spornummer på mobil'],'']
  ['Afspilningslinje','play','Topbjælke der viser læsefremdrift som spilletid med markeringer for hvert spor.',['Læsetid omregnet til mm:ss','Spormarkeringer følger kapitlerne','Altid synlig, aldrig klikbar'],'spor-1'],
  ['Kapitel-åbner','read','Spornummer i kontur, spilletid og kapiteltitel. Bølgeformen fyldes, når man ruller.',['Nummerering følger rækkefølgen','Spilletid = kapitlets læsetid','Én pr. kapitel'],'spor-1'],
  ['Brødtekst og ordforklaring','read','19px tekst i læsekolonnen med initial i første afsnit og klikbare fagord.',['Initial kun i kapitlets første afsnit','Ordforklaring første gang et fagord bruges','Maks 68 tegn pr. linje'],'spor-1'],
