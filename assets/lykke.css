@@ -409,3 +409,5 @@ mux-player{display:block;--media-background-color:#000;aspect-ratio:auto}
 .home-foot{border-top:1px solid var(--line);padding:var(--s4) 0 var(--s5);color:var(--muted);font-size:14px}
 .home-hero .lede{color:var(--ink-2)}
 .home-hero .h-hero em{font-style:normal;color:var(--coral);font-variation-settings:"wdth" 125}
+.bar.solo .time{margin-left:auto}
+@media (max-width:560px){.bar.solo .time{display:inline}}
