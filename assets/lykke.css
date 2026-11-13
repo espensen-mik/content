@@ -63,11 +63,12 @@ main{padding-top:calc(var(--bar-h) + env(safe-area-inset-top,0px))}
 .stage .eyebrow{color:var(--coral-light)}
 .eyebrow svg{width:14px;height:14px;fill:currentColor}
 .h-hero{font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 72;text-transform:uppercase;font-size:clamp(40px,7.6vw,104px);line-height:.9;letter-spacing:-.01em;margin:0;text-wrap:balance}
-.h-hero .star{color:var(--coral);display:inline-block}
-.h-hero .star span{display:inline-block;font-variation-settings:"wdth" 72;animation:eq 1.6s var(--ease) both;animation-delay:calc(var(--i) * 60ms + 300ms)}
-.h-hero .star:hover span{animation:eq2 .9s var(--ease) both;animation-delay:calc(var(--i) * 35ms)}
-@keyframes eq{0%{font-variation-settings:"wdth" 62;transform:scaleY(.6)}45%{font-variation-settings:"wdth" 125;transform:scaleY(1.1)}100%{font-variation-settings:"wdth" 72;transform:none}}
-@keyframes eq2{0%,100%{font-variation-settings:"wdth" 72}40%{font-variation-settings:"wdth" 125}}
+.h-hero .star{color:var(--coral);display:inline-block;white-space:nowrap}
+/* Nøgleordet hopper som equalizer-bjælker. Kun transform, så ordet aldrig bliver bredere og knækker over to linjer */
+.h-hero .star span{display:inline-block;font-variation-settings:"wdth" 72;transform-origin:50% 85%;animation:eq 1.4s var(--ease) both;animation-delay:calc(var(--i) * 55ms + 300ms)}
+.h-hero .star:hover span{animation:eq2 .8s var(--ease) both;animation-delay:calc(var(--i) * 35ms)}
+@keyframes eq{0%{transform:scaleY(.35)}40%{transform:scaleY(1.28)}65%{transform:scaleY(.9)}82%{transform:scaleY(1.06)}100%{transform:none}}
+@keyframes eq2{0%,100%{transform:none}40%{transform:scaleY(1.22)}70%{transform:scaleY(.94)}}
 .h-chapter{font-family:var(--f-display);font-weight:900;font-variation-settings:"wdth" 80;text-transform:uppercase;font-size:clamp(36px,5.4vw,72px);line-height:.95;margin:0;text-wrap:balance}
 .h-sub{font-family:var(--f-display);font-weight:800;font-variation-settings:"wdth" 90;font-size:clamp(22px,2.4vw,28px);line-height:1.15;margin:var(--s5) 0 var(--s2);text-wrap:balance}
 .lede{font-size:clamp(19px,2vw,23px);line-height:1.45;font-weight:400;color:var(--on-stage-2);max-width:620px;text-wrap:pretty}
