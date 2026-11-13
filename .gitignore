@@ -2,3 +2,6 @@
 .vercel
 node_modules
 .env*
+
+# Originale fotos; de weboptimerede ligger i img/
+longreads/*/images/

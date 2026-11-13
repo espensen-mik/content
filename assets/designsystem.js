@@ -25,6 +25,7 @@ const COMPS = [
  ['Foto, fuld bredde','media','Stort billede, der bryder læsekolonnen og giver pause.',['21:9 på desktop, mindst 240px højt','Billedtekst under, med mono-label','Højst ét pr. kapitel'],'spor-1'],
  ['Karaoke-citat','play','Spillerens citat lyser op ord for ord, mens man ruller. Nøgleordet bliver coral.',['Citat på maks 20 ord','Navn, alder og position','Ét pr. kapitel'],'citat'],
  ['Casekort med før/efter','media','Konkret eksempel fra projektet. Slideren viser foto og AI-version side om side.',['Hvem, hvad de gjorde, hvad AI gjorde','Menneske- og AI-del altid adskilt','AI-billede mærket i label'],'case'],
+ ['Workshop-case','media','En proces fortalt i trin med rigtige fotos. Hvert trin er et billede med en notelap, der lander på billedet, og trin-chips der følger med.',['3–5 trin, ét foto pr. trin','Kort tekst på notelappen','Billeder i 800 og 1600 px'],'workshop'],
  ['Case-række','read','Tre korte cases side om side, når der er flere eksempler end plads.',['Foto 3:2, eyebrow, titel, to sætninger','2–3 cases pr. række','Også til cases uden billede'],'case-raekke'],
  ['Filmstrimmel','media','Vandret galleri med blandede formater og tæller.',['3–8 billeder','Mix af 3:2 og 4:5','Kan styres med pile og tastatur'],'filmstrip'],
  ['Scrollytelling','play','Fast figur, der skifter, mens tekst-trin ruller forbi. Til processer med 3–5 trin.',['Hvert trin kan læses alene','Figur står øverst på mobil','Trin mærket menneske eller AI'],'scrolly'],

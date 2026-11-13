@@ -260,6 +260,18 @@ if (al && D.album?.length) {
   new IntersectionObserver(es => es.forEach(e => e.isIntersecting && al.classList.add('ready')), { threshold: .4 }).observe(al);
 }
 
+/* ---- Case: workshop i fire trin ---- */
+const ws = $('#workshop');
+if (ws) {
+  const steps = $$('.ws-step', ws), chips = $$('.ws-nav li', ws);
+  if (!RM) ws.classList.add('anim');
+  /* noten lander på billedet, når trinnet kommer i syne */
+  const inIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); inIO.unobserve(e.target) } }), { threshold: .35 });
+  /* trin-chippen i toppen følger med, mens man læser */
+  const navIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { const k = steps.indexOf(e.target); chips.forEach((c, n) => c.classList.toggle('on', n === k)) } }), { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach(s => { inIO.observe(s); navIO.observe(s) });
+}
+
 /* ---- Danmarkskort med hold (illustration) ---- */
 const dk = $('#holdkort');
 if (dk && D.teams?.length) {
