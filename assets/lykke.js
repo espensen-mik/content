@@ -246,9 +246,118 @@ if (al && D.album?.length) {
     ms.setActionHandler('play', start); ms.setActionHandler('pause', () => au.pause());
     ms.setActionHandler('previoustrack', () => load(i - 1, true)); ms.setActionHandler('nexttrack', () => load(i + 1, true));
   }
+  /* fortæl andre komponenter (fx Danmarkskortet), hvad der spiller */
+  const emit = () => document.dispatchEvent(new CustomEvent('lykke:track', { detail: { index: i, ...T[i], playing: !au.paused } }));
+  ['play', 'pause', 'loadstart'].forEach(ev => au.addEventListener(ev, emit));
+  window.Lykke.album = {
+    tracks: T,
+    play(k) { k === i && au.src ? (au.paused ? start() : au.pause()) : load(k, true) },
+    pause() { au.pause() },
+    get current() { return { index: i, playing: !au.paused } }
+  };
   setV(range); show(0);
   /* pladen glider halvt ud, når afspilleren kommer i syne */
   new IntersectionObserver(es => es.forEach(e => e.isIntersecting && al.classList.add('ready')), { threshold: .4 }).observe(al);
+}
+
+/* ---- Danmarkskort med hold ---- */
+const dk = $('#holdkort');
+if (dk && D.teams?.length) {
+  const [MW, MH] = D.mapSize, album = window.Lykke.album, tracks = album?.tracks || [];
+  const pinsEl = $('.dk-pins', dk), listEl = $('.dk-list', dk);
+  const songsOf = t => tracks.map((s, k) => ({ ...s, k })).filter(s => s.artist === t.artist);
+  pinsEl.innerHTML = D.teams.map((t, n) => `<button class="dk-pin" data-n="${n}" data-side="${t.side || 'r'}" style="left:${t.x / MW * 100}%;top:${t.y / MH * 100}%" aria-label="${t.name}, ${t.city}"><span class="dot"></span><span class="lbl"><b>${t.city}</b><span>${t.name}</span></span></button>`).join('');
+  const films = D.films || [];
+  listEl.innerHTML = D.teams.map((t, n) => {
+    const f = films.findIndex(x => x.artist === t.artist);
+    const film = f >= 0 && $('#musikvideoer') ? `<button class="film" data-f="${f}">Se musikvideoen</button>` : '';
+    return `<li data-n="${n}"><button class="team" data-n="${n}"><b>${t.name}</b><span>${t.city} · ${t.club}</span></button>${album || film ? `<div class="dk-songs">${album ? songsOf(t).map(s => `<button data-k="${s.k}" aria-pressed="false">${s.title}</button>`).join('') : ''}${film}</div>` : ''}</li>`;
+  }).join('');
+  $$('.dk-songs .film', listEl).forEach(b => b.addEventListener('click', () => window.Lykke.cinema?.play(+b.dataset.f, true)));
+  /* nålen pulserer, når holdets sang eller musikvideo spiller */
+  const live = { track: -1, film: -1 };
+  const paintLive = () => pins.forEach((p, k) => p.classList.toggle('live', k === live.track || k === live.film));
+  document.addEventListener('lykke:film', e => {
+    const n = D.teams.findIndex(t => t.artist === e.detail.artist);
+    live.film = e.detail.playing ? n : -1; paintLive();
+    if (e.detail.playing && n >= 0) focusTeam(n, true);
+  });
+  const pins = $$('.dk-pin', dk), items = $$('li', listEl);
+  let sel = -1;
+  function focusTeam(n, sticky) {
+    if (sticky) sel = n;
+    const a = n ?? sel;
+    pins.forEach((p, k) => p.classList.toggle('on', k === a));
+    items.forEach((l, k) => l.classList.toggle('on', k === a));
+  }
+  [...pins, ...$$('.team', listEl)].forEach(b => {
+    const n = +b.dataset.n;
+    b.addEventListener('mouseenter', () => focusTeam(n));
+    b.addEventListener('mouseleave', () => focusTeam(null));
+    b.addEventListener('focus', () => focusTeam(n));
+    b.addEventListener('blur', () => focusTeam(null));
+    b.addEventListener('click', () => {
+      focusTeam(n, true);
+      /* et klik på en nål viser holdet i listen; på telefon står listen under kortet */
+      if (b.classList.contains('dk-pin')) items[n].scrollIntoView({ block: 'nearest', behavior: RM ? 'auto' : 'smooth' });
+    });
+  });
+  $$('.dk-songs button[data-k]', listEl).forEach(b => b.addEventListener('click', () => album.play(+b.dataset.k)));
+  document.addEventListener('lykke:track', e => {
+    const { index, artist, playing } = e.detail;
+    const n = D.teams.findIndex(t => t.artist === artist);
+    live.track = playing ? n : -1; paintLive();
+    $$('.dk-songs button[data-k]', listEl).forEach(b => b.setAttribute('aria-pressed', playing && +b.dataset.k === index));
+    if (playing && n >= 0) focusTeam(n, true);
+  });
+}
+
+/* ---- Biograf: musikvideoer (Mux) ---- */
+const cn = $('#musikvideoer');
+if (cn && D.films?.length) {
+  const F = D.films, mp = $('#cinemaPlayer'), glow = $('.cn-glow img', cn), reel = $('.cn-reel', cn), titleBtn = $('.cn-title', cn);
+  const thumb = (f, t, w) => `https://image.mux.com/${f.id}/thumbnail.webp?time=${t}&width=${w}`;
+  const pad = n => String(n).padStart(2, '0');
+  let cur = 0;
+  $('.cn-count', cn).textContent = F.length;
+  reel.innerHTML = F.map((f, n) => `<li><button data-n="${n}" aria-current="${n === 0}" aria-label="${f.title}, ${f.team}, ${f.dur}"><span class="cn-thumb"><img src="${thumb(f, f.poster, 480)}" alt="" loading="lazy"><img class="anim" alt=""><span class="num">${pad(n + 1)}</span><span class="dur">${f.dur}</span><span class="now"><i></i><i></i><i></i></span></span><b>${f.title}</b><span class="t">${f.team}</span></button></li>`).join('');
+  const reelBtns = $$('button', reel);
+
+  function set(n) {
+    cur = n; const f = F[n];
+    mp.setAttribute('playback-id', f.id);
+    mp.setAttribute('poster', thumb(f, f.poster, 1600));
+    mp.setAttribute('metadata-video-title', `${f.title} · ${f.team}`);
+    glow.src = thumb(f, f.poster, 320);
+    $('.cn-no', cn).textContent = `Film ${pad(n + 1)}`;
+    $('.cn-dur', cn).textContent = f.dur;
+    $('.cn-song', cn).textContent = f.title;
+    $('.cn-team', cn).textContent = `${f.team} · ${f.city}`;
+    titleBtn.setAttribute('aria-label', `Afspil musikvideoen ${f.title} med ${f.team}`);
+    reelBtns.forEach((b, k) => b.setAttribute('aria-current', k === n));
+  }
+  function play(n, scroll) {
+    if (n !== cur) { set(n); cn.classList.remove('rolling') }
+    if (scroll) cn.scrollIntoView({ block: 'start', behavior: RM ? 'auto' : 'smooth' });
+    customElements.whenDefined('mux-player').then(() => { const p = mp.play(); p && p.catch(() => cn.classList.remove('rolling')) });
+  }
+  window.Lykke.cinema = { play };
+  titleBtn.addEventListener('click', () => play(cur));
+  reelBtns.forEach(b => {
+    const n = +b.dataset.n, anim = $('.anim', b);
+    b.addEventListener('click', () => play(n));
+    /* levende forhåndsvisning hentes først, når man peger på filmen */
+    const loadAnim = () => { if (RM || anim.src) return; anim.onload = () => anim.classList.add('ready'); anim.src = `https://image.mux.com/${F[n].id}/animated.webp?start=${F[n].preview}&end=${F[n].preview + 4}&width=400&fps=12` };
+    b.addEventListener('mouseenter', loadAnim); b.addEventListener('focus', loadAnim);
+  });
+  const emit = playing => document.dispatchEvent(new CustomEvent('lykke:film', { detail: { index: cur, ...F[cur], playing } }));
+  mp.addEventListener('play', () => { cn.classList.add('rolling'); window.Lykke.album?.pause(); $('#opturVideo')?.pause?.(); emit(true) });
+  mp.addEventListener('playing', () => cn.classList.remove('paused'));
+  mp.addEventListener('pause', () => { cn.classList.add('paused'); emit(false) });
+  mp.addEventListener('ended', () => { cn.classList.remove('rolling'); emit(false); if (cur < F.length - 1) set(cur + 1) });
+  $('#opturVideo')?.addEventListener('play', () => mp.pause?.());
+  document.addEventListener('lykke:track', e => { if (e.detail.playing) mp.pause?.() });
+  set(0);
 }
 
 layoutTicks(); onScroll();
