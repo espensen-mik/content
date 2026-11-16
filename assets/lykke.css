@@ -706,3 +706,4 @@ input[type=range].al-range::-moz-range-thumb{width:14px;height:14px;border-radiu
 .testimonial figcaption b{font-weight:800;color:var(--ink)}
 .testimonial figcaption span{font-size:14px;color:var(--muted)}
 @media (max-width:760px){.testimonial{grid-template-columns:1fr}.tm-side{flex-direction:row;align-items:center;gap:var(--s3)}.tm-mark{font-size:84px;height:.45em}.testimonial figcaption{grid-column:1}}
+.cinema + .testimonial{margin-top:0}
